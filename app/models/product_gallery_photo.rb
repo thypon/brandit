@@ -1,5 +1,6 @@
 class ProductGalleryPhoto < ActiveRecord::Base
-  belongs_to :product
-
+  attr_accessible :content
   has_attached_file :content
+
+  belongs_to :product
 end

@@ -1,5 +1,6 @@
 class ShowroomGalleryPhoto < ActiveRecord::Base
-  belongs_to :showroom
-
+  attr_accessible :content
   has_attached_file :content
+
+  belongs_to :showroom
 end
