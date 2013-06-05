@@ -6,4 +6,5 @@ class Product < ActiveRecord::Base
   has_and_belongs_to_many :designers
   has_and_belongs_to_many :services
   has_and_belongs_to_many :showrooms
+  has_and_belongs_to_many :shops
 end
