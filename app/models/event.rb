@@ -8,6 +8,6 @@ class Event < ActiveRecord::Base
   ## Helpers ##
   #############
   def self.best
-    self.where("MAJOR = 1")
+    self.where(major: true)
   end
 end
