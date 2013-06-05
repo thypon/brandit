@@ -2,8 +2,8 @@ class ShowroomGalleryPhoto < ActiveRecord::Base
   ################
   ## Attributes ##
   ################
-  attr_accessible :content
-  has_attached_file :content
+  attr_accessible :this
+  has_attached_file :this
 
   ###############
   ## Relations ##
