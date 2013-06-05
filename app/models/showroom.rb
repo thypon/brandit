@@ -9,5 +9,5 @@ class Showroom < ActiveRecord::Base
   ## Relations ##
   ###############
   has_and_belongs_to_many :products
-  has_many :product_gallery_photos
+  has_many :showroom_gallery_photos
 end
