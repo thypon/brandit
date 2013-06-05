@@ -22,7 +22,13 @@ end
 
 gem 'jquery-rails'
 
+# Used to abstract images in ActiveRecord
+# link: https://github.com/thoughtbot/paperclip
 gem "paperclip", "~> 3.0"
+
+# CSS Framework (Twitter Bootstrap)
+# link: http://railsapps.github.io/twitter-bootstrap-rails.html
+gem "bootstrap-sass"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
