@@ -9,4 +9,15 @@ class ShowroomGalleryPhoto < ActiveRecord::Base
   ## Relations ##
   ###############
   belongs_to :showroom
+
+  ######################
+  ## Simple Delegator ##
+  ######################
+  def method_missing(method, *args, &block)
+    begin
+      this.public_send(method, *args, &block)
+    rescue
+      super
+    end
+  end
 end
