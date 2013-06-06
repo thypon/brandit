@@ -3,6 +3,6 @@
 
 <ul>
 <% for style in @styles  %>
-    <li><%= link_to style.name, "TODO" %></li>
+    <li><%= link_to style.name, product_style_products_url(style) %></li>
 <% end %>
 </ul>
