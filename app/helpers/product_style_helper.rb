@@ -1,0 +1,2 @@
+module ProductStyleHelper
+end
