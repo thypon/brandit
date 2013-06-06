@@ -15,23 +15,4 @@ class Product < ActiveRecord::Base
   belongs_to :product_type
   belongs_to :product_style
   has_many :product_gallery_photos
-
-  #############
-  ## Helpers ##
-  #############
-  def self.by_type type
-    type.products
-  end
-
-  def self.by_style style
-    style.products
-  end
-
-  def self.types
-    ProductType.all
-  end
-
-  def self.styles
-    ProductStyle.all
-  end
 end
