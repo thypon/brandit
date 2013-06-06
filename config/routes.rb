@@ -1,12 +1,4 @@
 Brandit::Application.routes.draw do
-  get "product_type/index"
-
-  get "product_style/index"
-
-  get "product/index"
-
-  get "product/show"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
