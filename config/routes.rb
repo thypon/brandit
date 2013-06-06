@@ -1,4 +1,8 @@
 Brandit::Application.routes.draw do
+  resources :product_types do
+    resources :products
+  end
+
   resources :product_styles do
     resources :products
   end
