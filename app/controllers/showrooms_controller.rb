@@ -5,7 +5,7 @@ class ShowroomsController < ApplicationController
       @title = product.name
       @showrooms = product.showrooms
     else
-      @title = "All Showrooms"
+      @title = 'All Showrooms'
       @showrooms = Showroom.all
     end
   end
