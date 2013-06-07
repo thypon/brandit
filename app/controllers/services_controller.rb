@@ -1,7 +1,4 @@
 class ServicesController < ApplicationController
-#accessed by designer igt
-#product i
-#all igt
   def index
   	if id = params[:designer_id]
   		designer = Designer.find(id)

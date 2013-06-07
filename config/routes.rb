@@ -15,12 +15,16 @@ Brandit::Application.routes.draw do
 
   resources :shop_cities do
     resources :shops
+    resources :products
   end
 
   resources :services do
     resources :designers
     resources :service_points
+<<<<<<< HEAD
     resources :products
+=======
+>>>>>>> d5418d3e2b51e2e9133aa7852adb3fa8f2c0deb6
   end
 
   resources :designers do

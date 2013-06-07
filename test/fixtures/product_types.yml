@@ -1,8 +1,8 @@
-Kitchen:
+kitchen:
   name: Kitchens
-Bedroom:
+bedroom:
   name: Bedrooms
-Chair:
+chair:
   name: Chairs
-Table:
+table:
   name: Tables

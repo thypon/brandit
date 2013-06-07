@@ -1,9 +1,17 @@
-Milano:
- address: Service point Milano
+<% 1.upto(6) do |i| %>
+milan_<%= i %>:
+ address: Service point Milan_<%= i %>
  city: Milan
-London:
- address: Service point London
+<% end %>
+
+<% 1.upto(7) do |i| %>
+london_<%= i %>:
+ address: Service point London_<%= i %>
  city: London
-Roma:
- address: Service point Roma
+<% end %>
+
+<% 1.upto(5) do |i| %>
+rome_<%= i %>:
+ address: Service point Rome_<%= i %>
  city: Rome
+<% end %>

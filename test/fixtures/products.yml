@@ -1,0 +1,20 @@
+<% 1.upto(10) do |i| %>
+chair_<%= i %>:
+ name: Chair_<%= i %>
+ product_type: chair
+ product_style: oriental
+<% end %>
+
+<% 1.upto(10) do |i| %>
+table_<%= i %>:
+ name: table_<%= i %>
+ product_type: table
+ product_style: continental
+<% end %>
+
+<% 1.upto(10) do |i| %>
+kitchen_<%= i %>:
+ name: kitchen_<%= i %>
+ product_type: kitchen
+ product_style: bamboo
+<% end %>
