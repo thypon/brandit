@@ -20,7 +20,7 @@ Brandit::Application.routes.draw do
 
   resources :services do
     resources :designers
-    resources :service_pointss
+    resources :service_points
     resources :products
   end
 
