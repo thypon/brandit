@@ -1,5 +1,7 @@
 Brandit::Application.routes.draw do
-  resources :designers
+  resources :designers do
+    resources :products
+  end
 
   resources :product_types do
     resources :products
@@ -11,6 +13,14 @@ Brandit::Application.routes.draw do
 
   resources :products do
     resources :designers
+  end
+
+  resources :shops do
+    resources :products
+  end
+
+  resources :showroom do
+    resources :products
   end
 
   # The priority is based upon order of creation:
