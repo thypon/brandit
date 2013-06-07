@@ -3,6 +3,6 @@
 
 <ul>
   <% for city in @cities  %>
-      <li><%= link_to city.name, shop_city_shops_url(type) %></li>
+      <li><%= link_to city.name, shop_city_shops_url(city) %></li>
   <% end %>
 </ul>
