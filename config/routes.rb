@@ -23,7 +23,7 @@ Brandit::Application.routes.draw do
     resources :products
   end
 
-  resources :showroom do
+  resources :showrooms do
     resources :products
   end
 
