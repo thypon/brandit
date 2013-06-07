@@ -10,6 +10,12 @@ class ShowroomsController < ApplicationController
     end
   end
 
+  def gallery
+    @showroom = Showroom.find(id)
+    @title = @showroom.name " - Gallery"
+    @photos = @showroom.showroom_gallery_photos
+  end
+
   def show
     @pattern = :i
 
