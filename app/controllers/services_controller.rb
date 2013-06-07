@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
   		@title = product.name
   	else
   		@services = Service.all
-  		@title = "All Services"
+  		@title = 'All Services'
   	end
   end
 
@@ -21,9 +21,9 @@ class ServicesController < ApplicationController
   		@pattern = :i
   	else
   		@pattern = :igt
-	end
+	  end
 
-	@service = Service.find(params[:id])
+	  @service = Service.find(params[:id])
   end
 
   def up

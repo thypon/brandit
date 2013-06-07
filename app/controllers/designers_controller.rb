@@ -10,7 +10,7 @@ class DesignersController < ApplicationController
   		@title = product.name
   	else
   		@designers = Designer.all
-  		@title = "All Designers"
+  		@title = 'All Designers'
   	end
   end
 
@@ -39,6 +39,10 @@ class DesignersController < ApplicationController
   		designers = product.designers
   		next_index = designers.index(designer) + 1
   		redirect_to service_designer_path(service, designers[next_index])
+    else
+      designers = Designer.all
+      next_index = designers.index(designer) + 1
+      redirect_to designer_path(designers[next_index])
   	end
   end
 
@@ -55,7 +59,11 @@ class DesignersController < ApplicationController
   		designers = product.designers
   		previous_index = designers.index(designer) - 1
   		redirect_to service_designer_path(service, designers[previous_index])
-  	end
+    else
+      designers = Designer.all
+      previous_index = designers.index(designer) - 1
+      redirect_to designer_path(designers[previous_index])
+    end
   end
 
   def up

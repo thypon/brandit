@@ -40,6 +40,12 @@ class ProductsController < ApplicationController
     @title = @product.name
   end
 
+  def gallery
+    @product = Product.find(id)
+    @title = "#{@product.name} - Gallery"
+    @photos = @product.product_gallery_photos
+  end
+
   def up
     if id = params[:product_style_id]
       product_style = ProductStyle.find(id)

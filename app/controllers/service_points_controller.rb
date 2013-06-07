@@ -13,6 +13,7 @@ class ServicePointsController < ApplicationController
 
   def show
   	@pattern = :i
+
   	@service_point = ServicePoint.find(params[:id])
   end
 

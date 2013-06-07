@@ -1,4 +1,14 @@
 Brandit::Application.routes.draw do
+  get 'contacts/show'
+
+  get 'where_we_are/show'
+
+  get 'company/show'
+
+  get 'company/show_more'
+
+  resources :events
+
   resources :service_point_cities do
     resources :service_points
   end
@@ -11,10 +21,10 @@ Brandit::Application.routes.draw do
   resources :services do
     resources :designers
     resources :service_points
-  end
 
   resources :designers do
     resources :products
+    resources :services
   end
 
   resources :product_types do
@@ -39,6 +49,9 @@ Brandit::Application.routes.draw do
   resources :showrooms do
     resources :products
   end
+
+  resources :events
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

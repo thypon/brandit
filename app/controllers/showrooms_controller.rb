@@ -5,9 +5,15 @@ class ShowroomsController < ApplicationController
       @title = product.name
       @showrooms = product.showrooms
     else
-      @title = "All Showrooms"
+      @title = 'All Showrooms'
       @showrooms = Showroom.all
     end
+  end
+
+  def gallery
+    @showroom = Showroom.find(id)
+    @title = "#{@showroom.name} - Gallery"
+    @photos = @showroom.showroom_gallery_photos
   end
 
   def show
