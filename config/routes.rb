@@ -1,4 +1,12 @@
 Brandit::Application.routes.draw do
+  get "contacts/show"
+
+  get "where_we_are/show"
+
+  get "company/show"
+
+  get "company/show_more"
+
   get "events/index"
 
   get "events/show"
