@@ -7,13 +7,7 @@ Brandit::Application.routes.draw do
 
   get "company/show_more"
 
-  get "events/index"
-
-  get "events/show"
-
-  get "shops/index"
-
-  get "shops/show"
+  resources :events
 
   resources :service_point_cities do
     resources :service_points
@@ -26,14 +20,12 @@ Brandit::Application.routes.draw do
   resources :services do
     resources :designers
     resources :service_points
-  end
-
-  resources :services do
     resources :products
   end
 
   resources :designers do
     resources :products
+    resources :services
   end
 
   resources :product_types do
@@ -47,10 +39,8 @@ Brandit::Application.routes.draw do
   resources :products do
     resources :designers
     resources :shops
-  end
-
-  resources :products do
     resources :services
+    resources :showrooms
   end
 
   resources :shops do
@@ -59,10 +49,6 @@ Brandit::Application.routes.draw do
 
   resources :showrooms do
     resources :products
-  end
-
-  resources :products do
-    resources :showrooms
   end
 
   resources :events

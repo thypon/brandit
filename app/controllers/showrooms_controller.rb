@@ -12,7 +12,7 @@ class ShowroomsController < ApplicationController
 
   def gallery
     @showroom = Showroom.find(id)
-    @title = @showroom.name " - Gallery"
+    @title = @showroom.name + " - Gallery"
     @photos = @showroom.showroom_gallery_photos
   end
 

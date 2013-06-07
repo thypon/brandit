@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 
   def gallery
     @product = Product.find(id)
-    @title = @product.name " - Gallery"
+    @title = @product.name + " - Gallery"
     @photos = @product.product_gallery_photos
   end
 
