@@ -9,15 +9,12 @@ Brandit::Application.routes.draw do
 
   resources :shop_cities do
     resources :shops
+    resources :products
   end
 
   resources :services do
     resources :designers
     resources :service_points
-  end
-
-  resources :services do
-    resources :products
   end
 
   resources :designers do
@@ -35,10 +32,8 @@ Brandit::Application.routes.draw do
   resources :products do
     resources :designers
     resources :shops
-  end
-
-  resources :products do
     resources :services
+    resources :showrooms
   end
 
   resources :shops do
@@ -48,11 +43,6 @@ Brandit::Application.routes.draw do
   resources :showrooms do
     resources :products
   end
-
-  resources :products do
-    resources :showrooms
-  end
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
