@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   def index
     if params[:best]
-      @title = "Best Events"
+      @title = 'Best Events'
       @events = Event.best
     else
-      @title = "Events"
+      @title = 'Events'
       @events = Event.all
     end
   end

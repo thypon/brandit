@@ -10,7 +10,7 @@ class DesignersController < ApplicationController
   		@title = product.name
   	else
   		@designers = Designer.all
-  		@title = "All Designers"
+  		@title = 'All Designers'
   	end
   end
 

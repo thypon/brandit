@@ -1,11 +1,11 @@
 Brandit::Application.routes.draw do
-  get "contacts/show"
+  get 'contacts/show'
 
-  get "where_we_are/show"
+  get 'where_we_are/show'
 
-  get "company/show"
+  get 'company/show'
 
-  get "company/show_more"
+  get 'company/show_more'
 
   resources :events
 
