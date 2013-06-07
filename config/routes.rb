@@ -1,4 +1,6 @@
 Brandit::Application.routes.draw do
+  resources :shop_cities
+
   resources :services do
     resources :designers
   end
