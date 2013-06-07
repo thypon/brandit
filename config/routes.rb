@@ -1,4 +1,8 @@
 Brandit::Application.routes.draw do
+  get "services/index"
+
+  get "services/show"
+
   resources :designers
 
   resources :product_types do
