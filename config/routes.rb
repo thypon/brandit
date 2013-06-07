@@ -7,6 +7,10 @@ Brandit::Application.routes.draw do
     resources :designers
   end
 
+  resources :services do
+    resources :products
+  end
+
   resources :designers do
     resources :products
   end
@@ -21,6 +25,10 @@ Brandit::Application.routes.draw do
 
   resources :products do
     resources :designers
+  end
+
+  resources :products do
+    resources :services
   end
 
   resources :shops do
