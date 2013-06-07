@@ -1,4 +1,8 @@
 Brandit::Application.routes.draw do
+  get "events/index"
+
+  get "events/show"
+
   get "shops/index"
 
   get "shops/show"
@@ -52,6 +56,8 @@ Brandit::Application.routes.draw do
   resources :products do
     resources :showrooms
   end
+
+  resources :events
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
