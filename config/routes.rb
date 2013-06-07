@@ -1,8 +1,4 @@
 Brandit::Application.routes.draw do
-  get "shops/index"
-
-  get "shops/show"
-
   resources :service_point_cities do
     resources :service_points
   end
