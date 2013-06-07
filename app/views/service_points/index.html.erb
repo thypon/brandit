@@ -1,0 +1,10 @@
+<h1>ServicePoints#index</h1>
+<p>Find me in app/views/service_points/index.html.erb</p>
+
+<ul>
+<% for service_point in @service_points %>
+  <li>
+    <%= link_to service_point.name, service_point_path(service_point) %>
+  </li>
+<% end %>
+</ul>
