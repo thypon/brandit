@@ -23,9 +23,9 @@ class ShopsController < ApplicationController
   def up
     if id = params[:product_id]
       product = Product.find(id)
-      if params[:id]
+      if params[:id] ## Non sei nella pagina di transizione
         redirect_to product_shops_path(product)
-      else
+      else ## Sei nella pagina di transizione
         redirect_to product
       end
     elsif id = params[:shop_city_id]
