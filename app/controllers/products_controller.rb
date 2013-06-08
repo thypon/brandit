@@ -33,6 +33,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def best
+    #TODO
+
+    render 'index'
+  end
+
   def show
     if params[:product_style_id] || params[:service_id]
       @pattern = :i

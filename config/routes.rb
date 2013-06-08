@@ -19,6 +19,9 @@ Brandit::Application.routes.draw do
       get 'next'
       get 'previous'
     end
+    collection do
+      get 'best'
+    end
   end
 
   resources :service_point_cities do
@@ -186,6 +189,10 @@ Brandit::Application.routes.draw do
       get 'next'
       get 'previous'
       get 'gallery'
+    end
+    collection do
+      get 'up'
+      get 'best'
     end
   end
 

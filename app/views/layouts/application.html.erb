@@ -31,6 +31,37 @@
     </div>
   </nav>
 </header>
+<aside>
+  <ul class="nav nav-list">
+    <li>
+      <%= link_to 'Products', url_for(controller: 'products', action: 'best') %>
+    </li>
+    <li>
+      <%= link_to 'Product Types', product_types_path %>
+    </li>
+    <li>
+      <%= link_to 'Product Styles', product_styles_path %>
+    </li>
+    <li>
+      <%= link_to 'Designers', designers_path %>
+    </li>
+    <li>
+      <%= link_to 'Services', services_path %>
+    </li>
+    <li>
+      <%= link_to 'Service Point Locations', service_point_cities_path %>
+    </li>
+    <li>
+      <%= link_to 'Shop Locations', shop_cities_path %>
+    </li>
+    <li>
+      <%= link_to 'Showrooms', showrooms_path %>
+    </li>
+    <li>
+      <%= link_to 'Best Events', url_for(controller: 'events', action: 'best') %>
+    </li>
+  </ul>
+</aside>
 <%= yield %>
 
 </body>

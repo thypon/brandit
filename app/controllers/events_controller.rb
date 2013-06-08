@@ -1,15 +1,18 @@
 class EventsController < ApplicationController
   def index
-    if params[:best]
-      content_for :title, 'Best Events'
-      @events = Event.best
-    else
-      content_for :title, 'Events'
-      @events = Event.all
-    end
+    content_for :title, 'Best Events'
+    @events = Event.best
+  end
+
+  def best
+    content_for :title, 'Events'
+    @events = Event.all
+
+    render 'index'
   end
 
   def show
+    #TODO Find a way to take best from url
     if params[:best]
       @pattern = :igt
     else
