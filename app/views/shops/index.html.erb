@@ -1,2 +1,20 @@
 <h1>Shops#index</h1>
 <p>Find me in app/views/shops/index.html.erb</p>
+
+<ul>
+  <% for shop in @shops %>
+      <li>
+        <% link = if @previous
+                    if @previous.class == City
+                      shop_city_shop_path(@previous, shop)
+                    else
+                      [@previous, shop]
+                    end
+                  else
+                    shop
+                  end
+        %>
+        <%= link_to shop.address, link %>
+      </li>
+  <% end %>
+</ul>

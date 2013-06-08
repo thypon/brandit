@@ -1,0 +1,17 @@
+<% 1.upto(6) do |i| %>
+milan_<%= i %>:
+ address: Shop Milan_<%= i %>
+ city: Milan
+<% end %>
+
+<% 1.upto(7) do |i| %>
+london_<%= i %>:
+ address: Shop London_<%= i %>
+ city: London
+<% end %>
+
+<% 1.upto(5) do |i| %>
+rome_<%= i %>:
+ address: Shop Rome_<%= i %>
+ city: Rome
+<% end %>

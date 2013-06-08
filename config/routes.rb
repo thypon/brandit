@@ -22,7 +22,14 @@ Brandit::Application.routes.draw do
   end
 
   resources :shop_cities do
-    resources :shops
+    resources :shops do
+      member do
+        get 'up'
+      end
+      collection do
+        get 'up'
+      end
+    end
     resources :products
   end
 
@@ -76,8 +83,9 @@ Brandit::Application.routes.draw do
 
     member do
       get 'up'
-      get 'next'
-      get 'previous'
+    end
+    collection do
+      get 'up'
     end
   end
 
