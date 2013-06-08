@@ -1,4 +1,6 @@
 Brandit::Application.routes.draw do
+  resource :homepage, :controller => :homepage
+
   resource :where_we_are, :controller => :where_we_are
 
   resource :company, :controller => :company do
