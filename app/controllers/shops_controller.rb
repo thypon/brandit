@@ -23,10 +23,10 @@ class ShopsController < ApplicationController
   def up
     if id = params[:product_id]
       product = Product.find(id)
-      if params[:id]
+      if sid = params[:id]
         redirect_to product_shops_path(product)
       else
-        redirect_to product
+        redirect_to [product, Shop.find(sid)]
       end
     elsif id = params[:shop_city_id]
       city = City.find(id)
