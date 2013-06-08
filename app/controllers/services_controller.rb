@@ -32,10 +32,18 @@ class ServicesController < ApplicationController
   def up
   	if id = params[:designer_id]
   		designer = Designer.find(id)
-  		redirect_to designer_path(designer)
+      if params[:id]
+  		  redirect_to designer_path(designer)
+      else
+        redirect_to designer
+      end
   	elsif id = params[:product_id]
   		product = Product.find(id)
-  		redirect_to product_path(product)
+      if params[:id]
+  		  redirect_to product_path(product)
+      else
+        redirect_to product
+      end
   	else
   		redirect_to services_path
   	end

@@ -43,11 +43,23 @@ Brandit::Application.routes.draw do
       get 'next'
       get 'previous'
     end
+    collection do
+      get 'up'
+    end
   end
 
   resources :designers do
     resources :products
-    resources :services
+    resources :services do
+      member do
+        get 'up'
+        get 'next'
+        get 'previous'
+      end
+      collection do
+        get 'up'
+      end
+    end
 
     member do
       get 'up'
@@ -67,7 +79,16 @@ Brandit::Application.routes.draw do
   resources :products do
     resources :designers
     resources :shops
-    resources :services
+    resources :services do
+      member do
+        get 'up'
+        get 'next'
+        get 'previous'
+      end
+      collection do
+        get 'up'
+      end
+    end
     resources :showrooms do
       member do
         get 'up'
