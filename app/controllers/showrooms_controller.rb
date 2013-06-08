@@ -2,17 +2,17 @@ class ShowroomsController < ApplicationController
   def index
     if id = params[:product_id]
       product = Product.find(id)
-      @title = product.name
+      content_for :title, product.name
       @showrooms = product.showrooms
     else
-      @title = 'All Showrooms'
+      content_for :title, 'All Showrooms'
       @showrooms = Showroom.all
     end
   end
 
   def gallery
     @showroom = Showroom.find(id)
-    @title = "#{@showroom.name} - Gallery"
+    content_for :title, "#{@showroom.name} - Gallery"
     @photos = @showroom.showroom_gallery_photos
   end
 
@@ -20,7 +20,7 @@ class ShowroomsController < ApplicationController
     @pattern = :i
 
     @showroom = Showroom.find(params[:id])
-    @title = @showroom.name
+    content_for :title, @showroom.name
   end
 
   def up

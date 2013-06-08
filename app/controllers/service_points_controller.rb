@@ -3,11 +3,11 @@ class ServicePointsController < ApplicationController
   	if id = params[:service_point_city_id]
   		city = City.find(id)
   		@service_points = city.service_points
-  		@title = city.name
+  		content_for :title, city.name
   	elsif id = params[:service_id]
   		service = Service.find(id)
   		@service_points = service.service_points
-  		@title = service.name
+      content_for :title, service.name
   	end
   end
 
@@ -15,6 +15,7 @@ class ServicePointsController < ApplicationController
   	@pattern = :i
 
   	@service_point = ServicePoint.find(params[:id])
+    content_for :title, @service_point.address
   end
 
   def next

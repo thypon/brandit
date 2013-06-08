@@ -2,11 +2,11 @@ class ShopsController < ApplicationController
   def index
     if id = params[:product_id]
       product = Product.find(id)
-      @title = product.name
+      content_for :title, product.name
       @shops = product.shops
     elsif id = params[:shop_city_id]
       city = City.find(id)
-      @title = city.name
+      content_for :title, city.name
       @shops = city.shops
     end
   end
@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
     @pattern = :i
 
     @shop = Shop.find(params[:id])
-    @title = @shop.name
+    content_for :title, @shop.name
   end
 
   def up

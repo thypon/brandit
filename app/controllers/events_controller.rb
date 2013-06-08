@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   def index
     if params[:best]
-      @title = 'Best Events'
+      content_for :title, 'Best Events'
       @events = Event.best
     else
-      @title = 'Events'
+      content_for :title, 'Events'
       @events = Event.all
     end
   end
@@ -17,6 +17,7 @@ class EventsController < ApplicationController
     end
 
     @event = Event.find(params[:id])
+    content_for :title, @event.name
   end
 
   def up

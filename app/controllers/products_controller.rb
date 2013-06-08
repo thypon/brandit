@@ -2,27 +2,27 @@ class ProductsController < ApplicationController
   def index
     if id = params[:product_style_id]
       product_style = ProductStyle.find(id)
-      @title = product_style.name
+      content_for :title, product_style.name
       @products = product_style.products
     elsif id = params[:product_type_id]
       product_type = ProductType.find(id)
-      @title = product_type.name
+      content_for :title, product_type.name
       @products = product_type.products
     elsif id = params[:designer_id]
       designer = Designer.find(id)
-      @title = designer.name
+      content_for :title, designer.name
       @products = designer.products
     elsif id = params[:shop_id]
       shop = Shop.find(id)
-      @title = shop.name
+      content_for :title, shop.name
       @products = shop.products
     elsif id = params[:showroom_id]
       showroom = Showroom.find(id)
-      @title = showroom.name
+      content_for :title, showroom.name
       @products = showroom.products
     elsif id = params[:service_id]
       service = Service.find(id)
-      @title = service.name
+      content_for :title, service.name
       @products = service.products
     end
   end
@@ -37,12 +37,12 @@ class ProductsController < ApplicationController
     end
 
     @product = Product.find(params[:id])
-    @title = @product.name
+    content_for :title, @product.name
   end
 
   def gallery
     @product = Product.find(id)
-    @title = "#{@product.name} - Gallery"
+    content_for :title, "#{@product.name} - Gallery"
     @photos = @product.product_gallery_photos
   end
 

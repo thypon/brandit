@@ -3,14 +3,14 @@ class ServicesController < ApplicationController
   	if id = params[:designer_id]
   		designer = Designer.find(id)
   		@services = designer.services
-  		@title = designer.name
+      content_for :title, designer.name
   	elsif id = params[:product_id]
   		product = Product.find(id)
   		@services = product.services
-  		@title = product.name
+      content_for :title, product.name
   	else
   		@services = Service.all
-  		@title = 'All Services'
+      content_for :title, 'All Services'
   	end
   end
 
@@ -24,6 +24,7 @@ class ServicesController < ApplicationController
 	  end
 
 	  @service = Service.find(params[:id])
+    content_for :title, @service.name
   end
 
   def up
