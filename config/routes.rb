@@ -1,11 +1,9 @@
 Brandit::Application.routes.draw do
-  get 'contacts/show'
+  resource :where_we_are, :controller => :where_we_are
 
-  get 'where_we_are/show'
+  resource :company, :controller => :company
 
-  get 'company/show'
-
-  get 'company/show_more'
+  resource :contacts
 
   resources :events
 
