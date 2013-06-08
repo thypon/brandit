@@ -1,4 +1,6 @@
 Brandit::Application.routes.draw do
+  root :to => 'homepage#show'
+
   resource :homepage, :controller => :homepage
 
   resource :where_we_are, :controller => :where_we_are
