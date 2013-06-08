@@ -27,7 +27,11 @@ class ShowroomsController < ApplicationController
   def up
     if id = params[:product_id]
       product = Product.find(id)
-      redirect_to product_showrooms_path(product)
+      if params[:id]
+        redirect_to product_showrooms_path(product)
+      else
+        redirect_to product
+      end
     else
       redirect_to products_path
     end

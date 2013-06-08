@@ -68,7 +68,12 @@ Brandit::Application.routes.draw do
     resources :designers
     resources :shops
     resources :services
-    resources :showrooms
+    resources :showrooms do
+      member do
+        get 'up'
+        get 'gallery'
+      end
+    end
 
     member do
       get 'up'
@@ -97,6 +102,7 @@ Brandit::Application.routes.draw do
       get 'gallery'
     end
   end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
