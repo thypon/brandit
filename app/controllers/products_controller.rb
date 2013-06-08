@@ -55,22 +55,46 @@ class ProductsController < ApplicationController
   def up
     if id = params[:product_style_id]
       product_style = ProductStyle.find(id)
-      redirect_to product_style_products_path(product_style)
+      if params[:id]
+        redirect_to product_style_products_path(product_style)
+      else
+        redirect_to product_style
+      end
     elsif id = params[:product_types_id]
       product_type = ProductType.find(id)
-      redirect_to product_type_products_path(product_type)
+      if params[:id]
+        redirect_to product_type_products_path(product_type)
+      else
+        redirect_to product_type
+      end
     elsif id = params[:designer_id]
       designer = Designer.find(id)
-      redirect_to designer_products_path(designer)
+      if params[:id]
+        redirect_to designer_products_path(designer)
+      else
+        redirect_to designer
+      end
     elsif id = params[:shop_id]
       shop = Shop.find(id)
-      redirect_to shop_products_path(shop)
+      if params[:id]
+        redirect_to shop_products_path(shop)
+      else
+        redirect_to shop
+      end
     elsif id = params[:showroom_id]
       showroom = Showroom.find(id)
-      redirect_to showroom_products_path(showroom)
+      if params[:id]
+        redirect_to showroom_products_path(showroom)
+      else
+        redirect_to showroom
+      end
     elsif id = params[:service_id]
       service = Service.find(id)
-      redirect_to service_products_path(service)
+      if params[:id]
+        redirect_to service_products_path(service)
+      else
+        redirect_to service
+      end
     end
   end
 
