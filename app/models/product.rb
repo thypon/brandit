@@ -15,4 +15,8 @@ class Product < ActiveRecord::Base
   belongs_to :product_type
   belongs_to :product_style
   has_many :product_gallery_photos
+
+  def self.best
+    #TODO
+  end
 end

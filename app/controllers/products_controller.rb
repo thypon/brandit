@@ -30,13 +30,10 @@ class ProductsController < ApplicationController
       @previous = service
       content_for :title, service.name
       @products = service.products
+    else
+      content_for :title, 'Best Products'
+      @products = Product.best
     end
-  end
-
-  def best
-    #TODO
-
-    render 'index'
   end
 
   def show

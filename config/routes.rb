@@ -192,7 +192,6 @@ Brandit::Application.routes.draw do
     end
     collection do
       get 'up'
-      get 'best'
     end
   end
 
