@@ -2,10 +2,12 @@ class ServicesController < ApplicationController
   def index
   	if id = params[:designer_id]
   		designer = Designer.find(id)
+      @previous = designer
   		@services = designer.services
       content_for :title, designer.name
   	elsif id = params[:product_id]
   		product = Product.find(id)
+      @previous = product
   		@services = product.services
       content_for :title, product.name
   	else

@@ -2,14 +2,17 @@ class DesignersController < ApplicationController
   def index
   	if id = params[:service_id]
   		service = Service.find(id)
+      @previous = service
   		@designers = service.designers
       content_for :title, service.name
   	elsif id = params[:product_id]
   		product = Product.find(id)
+      @previous = product
   		@designers = product.designers
   		content_for :title, product.name
-  	else
+    else
   		@designers = Designer.all
+      @previous = @designers
       content_for :title, 'All Designers'
   	end
   end
@@ -34,16 +37,17 @@ class DesignersController < ApplicationController
   		service = Service.find(id)
   		designers = service.designers
   		next_index = designers.index(designer) + 1
-  		redirect_to service_designer_path(service, designers[next_index])
+  		redirect_to [service, designers[next_index]]
   	elsif id = params[:product_id]
   		product = Product.find(id)
   		designers = product.designers
   		next_index = designers.index(designer) + 1
-  		redirect_to service_designer_path(service, designers[next_index])
+  		redirect_to [service, designers[next_index]]
     else
       designers = Designer.all
       next_index = designers.index(designer) + 1
-      redirect_to designer_path(designers[next_index])
+      #redirect_to designer_path(designers[next_index])
+      redirect_to designers[next_index]
   	end
   end
 
@@ -54,26 +58,26 @@ class DesignersController < ApplicationController
   		service = Service.find(id)
   		designers = service.designers
   		previous_index = designers.index(designer) - 1
-  		redirect_to service_designer_path(service, designers[previous_index])
+  		redirect_to [service, designers[previous_index]]
   	elsif id = params[:product_id]
   		product = Product.find(id)
   		designers = product.designers
   		previous_index = designers.index(designer) - 1
-  		redirect_to service_designer_path(service, designers[previous_index])
+  		redirect_to [service, designers[previous_index]]
     else
       designers = Designer.all
       previous_index = designers.index(designer) - 1
-      redirect_to designer_path(designers[previous_index])
+      redirect_to designers[previous_index]
     end
   end
 
   def up
   	if params[:service_id]
   		service = Service.find(id)
-  		redirect_to service_designers_path(service)
+  		redirect_to service
   	elsif id = params[:product_id]
   		product = Product.find(id)
-  		redirect_to product_path(product)
+  		redirect_to product
   	else
   		redirect_to designers_path
   	end 

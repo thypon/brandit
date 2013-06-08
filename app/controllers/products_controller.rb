@@ -2,26 +2,32 @@ class ProductsController < ApplicationController
   def index
     if id = params[:product_style_id]
       product_style = ProductStyle.find(id)
+      @previous = product_style
       content_for :title, product_style.name
       @products = product_style.products
     elsif id = params[:product_type_id]
       product_type = ProductType.find(id)
+      @previous = product_type
       content_for :title, product_type.name
       @products = product_type.products
     elsif id = params[:designer_id]
       designer = Designer.find(id)
+      @previous = designer
       content_for :title, designer.name
       @products = designer.products
     elsif id = params[:shop_id]
       shop = Shop.find(id)
+      @previous = shop
       content_for :title, shop.name
       @products = shop.products
     elsif id = params[:showroom_id]
       showroom = Showroom.find(id)
+      @previous = showroom
       content_for :title, showroom.name
       @products = showroom.products
     elsif id = params[:service_id]
       service = Service.find(id)
+      @previous = service
       content_for :title, service.name
       @products = service.products
     end

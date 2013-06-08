@@ -2,10 +2,12 @@ class ServicePointsController < ApplicationController
   def index
   	if id = params[:service_point_city_id]
   		city = City.find(id)
+      @previous = city
   		@service_points = city.service_points
   		content_for :title, city.name
   	elsif id = params[:service_id]
   		service = Service.find(id)
+      @previous = service
   		@service_points = service.service_points
       content_for :title, service.name
   	end

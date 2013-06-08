@@ -1,11 +1,21 @@
 Brandit::Application.routes.draw do
   resource :where_we_are, :controller => :where_we_are
 
-  resource :company, :controller => :company
+  resource :company, :controller => :company do
+    member do
+      get 'show_more'
+    end
+  end
 
   resource :contacts
 
-  resources :events
+  resources :events do
+    member do
+      get 'up'
+      get 'next'
+      get 'previous'
+    end
+  end
 
   resources :service_point_cities do
     resources :service_points
@@ -20,11 +30,23 @@ Brandit::Application.routes.draw do
     resources :designers
     resources :service_points
     resources :products
+
+    member do
+      get 'up'
+      get 'next'
+      get 'previous'
+    end
   end
 
   resources :designers do
     resources :products
     resources :services
+
+    member do
+      get 'up'
+      get 'next'
+      get 'previous'
+    end
   end
 
   resources :product_types do
@@ -40,18 +62,33 @@ Brandit::Application.routes.draw do
     resources :shops
     resources :services
     resources :showrooms
+
+    member do
+      get 'up'
+      get 'next'
+      get 'previous'
+      get 'gallery'
+    end
   end
 
   resources :shops do
     resources :products
+
+    member do
+      get 'up'
+      get 'next'
+      get 'previous'
+    end
   end
 
   resources :showrooms do
     resources :products
+
+    member do
+      get 'up'
+      get 'gallery'
+    end
   end
-
-  resources :events
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

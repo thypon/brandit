@@ -3,6 +3,7 @@ class ShowroomsController < ApplicationController
     if id = params[:product_id]
       product = Product.find(id)
       content_for :title, product.name
+      @previous = product
       @showrooms = product.showrooms
     else
       content_for :title, 'All Showrooms'

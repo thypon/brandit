@@ -4,7 +4,17 @@
 <ul>
 <% for service_point in @service_points %>
   <li>
-    <%= link_to service_point.address, service_point_city_service_point_path(service_point.city, service_point) %>
+    <% link = if @previous
+                if @previous.class == City
+                  service_point_city_service_point_path(@previous, service_point)
+                else
+                  [@previous, service_point]
+                end
+       else
+                service_point
+       end
+    %>
+    <%= link_to service_point.address, link %>
   </li>
 <% end %>
 </ul>

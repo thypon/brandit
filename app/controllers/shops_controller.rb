@@ -2,10 +2,12 @@ class ShopsController < ApplicationController
   def index
     if id = params[:product_id]
       product = Product.find(id)
+      @previous = product
       content_for :title, product.name
       @shops = product.shops
     elsif id = params[:shop_city_id]
       city = City.find(id)
+      @previous = city
       content_for :title, city.name
       @shops = city.shops
     end
