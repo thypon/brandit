@@ -23,10 +23,18 @@ class ServicePointsController < ApplicationController
   def up
   	if params[:service_point_city_id]
   		city = City.find(id)
-  		redirect_to service_point_city_service_points_path(city)
+      if params[:id]
+        redirect_to service_point_city_service_points_path(city)
+      else
+        redirect_to service_point_city_path(city)
+      end
   	elsif id = params[:service_id]
   		service = Service.find(id)
-  		redirect_to service_service_points_path(service)
+      if params[:id]
+        redirect_to service_service_points_path(service)
+      else
+        redirect_to service
+      end
   	end
   end
 end

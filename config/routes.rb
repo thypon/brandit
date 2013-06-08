@@ -21,7 +21,12 @@ Brandit::Application.routes.draw do
 
   resources :service_point_cities do
     resources :service_points do
-      member
+      member do
+        get 'up'
+      end
+      collection do
+        get 'up'
+      end
     end
   end
 
@@ -39,7 +44,14 @@ Brandit::Application.routes.draw do
 
   resources :services do
     resources :designers
-    resources :service_points
+    resources :service_points do
+      member do
+        get 'up'
+      end
+      collection do
+        get 'up'
+      end
+    end
     resources :products
 
     member do
