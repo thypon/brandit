@@ -20,7 +20,9 @@ Brandit::Application.routes.draw do
   end
 
   resources :service_point_cities do
-    resources :service_points
+    resources :service_points do
+      member
+    end
   end
 
   resources :shop_cities do
