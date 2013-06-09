@@ -9,9 +9,9 @@ paths = (path for path in paths when path isnt "")
 
 ps = []
 currpath = "/"
-ps.push
-  compo: "/"
-  name: "Home"
+#ps.push
+#  compo: "/"
+#  name: "Home"
 
 for path in paths
   currpath += path + "/"
