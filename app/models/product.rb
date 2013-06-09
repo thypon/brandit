@@ -18,7 +18,5 @@ class Product < ActiveRecord::Base
 
   def self.best
     self.joins(:designers)
-    #self.all.find(:joins => 'LEFT JOIN `designers` ON designers.product_id = products.id',
-    #          :select => 'products.*')
   end
 end
