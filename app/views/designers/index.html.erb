@@ -4,13 +4,7 @@
 <ul>
 <% for designer in @designers %>
   <li>
-    <% link = if @previous
-                [@previous, designer]
-       else
-                designer
-       end
-    %>
-    <%= link_to designer.name, link %>
+    <%= link_to designer.name, [@previous, designer] %>
   </li>
 <% end %>
 </ul>

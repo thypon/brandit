@@ -133,6 +133,10 @@ class ProductsController < ApplicationController
       product = Product.find(params[:id])
       next_index = service.products.index(product) + 1
       redirect_to showroom_product_path(service, service.products[next_index])
+    else
+      product = Product.find(params[:id])
+      next_index = Product.best.index(product) + 1
+      redirect_to Product.best[next_index]
     end
   end
 
@@ -167,6 +171,10 @@ class ProductsController < ApplicationController
       product = Product.find(params[:id])
       previous_index = service.products.index(product) - 1
       redirect_to showroom_product_path(service, service.products[previous_index])
+    else
+      product = Product.find(params[:id])
+      previous_index = Product.best.index(product) - 1
+      redirect_to Product.best[previous_index]
     end
   end
 end

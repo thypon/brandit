@@ -18,5 +18,6 @@ class Product < ActiveRecord::Base
 
   def self.best
     #TODO
+    self.all
   end
 end
