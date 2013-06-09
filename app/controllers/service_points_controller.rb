@@ -14,7 +14,7 @@ class ServicePointsController < ApplicationController
   end
 
   def show
-  	@pattern = :i
+    content_for :pattern, :i
 
   	@service_point = ServicePoint.find(params[:id])
     content_for :title, @service_point.address

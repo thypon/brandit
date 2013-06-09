@@ -19,12 +19,12 @@ class ServicesController < ApplicationController
 
   def show
   	if params[:designer_id]
-  		@pattern = :igt
+      content_for :pattern, :igt
   	elsif params[:product_id]
-  		@pattern = :i
+      content_for :pattern, :i
   	else
-  		@pattern = :igt
-	  end
+      content_for :pattern, :igt
+    end
 
 	  @service = Service.find(params[:id])
     content_for :title, @service.name

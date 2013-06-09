@@ -39,11 +39,11 @@ class ProductsController < ApplicationController
 
   def show
     if params[:product_style_id] || params[:service_id]
-      @pattern = :i
+      content_for :pattern, :i
     elsif params[:product_type_id]
-      @pattern = :igt
+      content_for :pattern, :igt
     else
-      @pattern = :gt
+      content_for :pattern, :gt
     end
 
     @product = Product.find(params[:id])

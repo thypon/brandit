@@ -19,7 +19,7 @@ class ShowroomsController < ApplicationController
   end
 
   def show
-    @pattern = :i
+    content_for :pattern, :i
 
     @showroom = Showroom.find(params[:id])
     content_for :title, @showroom.name

@@ -15,9 +15,9 @@ class EventsController < ApplicationController
   def show
     #TODO Find a way to take best from url
     if params[:best]
-      @pattern = :igt
+      content_for :pattern, :igt
     else
-      @pattern = :i
+      content_for :pattern, :i
     end
 
     @event = Event.find(params[:id])
