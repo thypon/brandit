@@ -28,4 +28,4 @@ $(document).ready ->
   for p in ps
     $breadcrumb.append("<li><a href=\"#{p.compo}\">#{p.name}</a> <span class=\"divider\">/</span></li>")
 
-  $breadcrumb.append("<li class=\"active\">#{last.name}</li>")
+  $breadcrumb.append("<li class=\"active\">#{last.name}</li>") if last?
