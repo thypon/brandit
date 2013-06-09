@@ -42,6 +42,7 @@
  name: <%= chair.first.capitalize %>
  product_type: chair
  product_style: <%= chair.last %>
+ services: repair
 <% end %>
 
 <% tables.each do |table| %>
@@ -49,6 +50,7 @@
  name: <%= table.first.capitalize %>
  product_type: table
  product_style: <%= table.last %>
+ services: repair, personalization
 <% end %>
 
 <% sofas.each do |sofa| %>
@@ -56,6 +58,7 @@
  name: <%= sofa.first.capitalize %>
  product_type: sofa
  product_style: <%= sofa.last %>
+ services: repair, design, personalization
 <% end %>
 
 <% kitchens.each do |kitchen| %>
@@ -63,6 +66,7 @@
  name: <%= kitchen.first.capitalize %>
  product_type: kitchen
  product_style: <%= kitchen.last %>
+ services: repair, design, assistance, personalization
 <% end %>
 
 <% wardrobes.each do |wardrobe| %>
@@ -70,6 +74,7 @@
  name: <%= wardrobe.first.capitalize %>
  product_type: wardrobe
  product_style: <%= wardrobe.last %>
+ services: repair, assistance
 <% end %>
 
 <% beds.each do |bed| %>
@@ -77,4 +82,5 @@
  name: <%= bed.first.capitalize %>
  product_type: bed
  product_style: <%= bed.last %>
+ services: design, personalization
 <% end %>

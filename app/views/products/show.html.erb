@@ -1,2 +1,20 @@
 <h1>Products#show</h1>
 <p>Find me in app/views/products/show.html.erb</p>
+
+<h1><%= @product.name %></h1>
+
+<p>Designers:
+	<% @product.designers.each do |designer| %>
+	<%= link_to designer.name, [@product, designer] %>
+	<% end %>
+</p>
+
+<p>Services:
+	<% @product.services.each do |service| %>
+	<%= link_to service.name, [@product, service] %>
+	<% end %>
+</p>
+
+<p><%= link_to "Showrooms", product_showrooms_path(@product) %></p>
+
+<p><%= link_to "Shops", product_shops_path(@product) %></p>
