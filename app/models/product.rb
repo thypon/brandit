@@ -17,6 +17,7 @@ class Product < ActiveRecord::Base
   has_many :product_gallery_photos
 
   def self.best
-    self.joins(:designers)
+    #method "group" is to select DISTINCT products
+    self.joins(:designers).group(:id)
   end
 end

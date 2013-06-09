@@ -1,5 +1,11 @@
-repairing:
+repair:
  name: In-place repairment
 
 design:
  name: Interior Design
+
+personalization:
+ name: Personalization
+
+assistance:
+ name: Assistance
