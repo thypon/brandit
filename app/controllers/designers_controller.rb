@@ -36,17 +36,16 @@ class DesignersController < ApplicationController
   	if id = params[:service_id]
   		service = Service.find(id)
   		designers = service.designers
-  		next_index = designers.index(designer) + 1
+  		next_index = (designers.index(designer) + 1) % designers.length
   		redirect_to [service, designers[next_index]]
   	elsif id = params[:product_id]
   		product = Product.find(id)
   		designers = product.designers
-  		next_index = designers.index(designer) + 1
+  		next_index = (designers.index(designer) + 1) % designers.length
   		redirect_to [service, designers[next_index]]
     else
       designers = Designer.all
-      next_index = designers.index(designer) + 1
-      #redirect_to designer_path(designers[next_index])
+      next_index = (designers.index(designer) + 1) % designers.length
       redirect_to designers[next_index]
   	end
   end

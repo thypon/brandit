@@ -106,37 +106,44 @@ class ProductsController < ApplicationController
     if id = params[:product_style_id]
       product_style = ProductStyle.find(id)
       product = Product.find(params[:id])
-      next_index = product_style.products.index(product) + 1
-      redirect_to product_style_product_path(product_style, product_style.products[next_index])
+      products = product_style.products
+      next_index = (products.index(product) + 1) % products.length
+      redirect_to product_style_product_path(product_style, products[next_index])
     elsif id = params[:product_type_id]
       product_type = ProductType.find(id)
       product = Product.find(params[:id])
-      next_index = product_type.products.index(product) + 1
-      redirect_to product_type_product_path(product_type, product_type.products[next_index])
+      product_type.products
+      next_index = (products.index(product) + 1) % products.length
+      redirect_to product_type_product_path(product_type, products[next_index])
     elsif id = params[:designer_id]
       designer = Designer.find(id)
       product = Product.find(params[:id])
-      next_index = designer.products.index(product) + 1
-      redirect_to designer_product_path(designer, designer.products[next_index])
+      products = designer.products
+      next_index = (products.index(product) + 1) % products.length
+      redirect_to designer_product_path(designer, products[next_index])
     elsif id = params[:shop_id]
       shop = Shop.find(id)
       product = Product.find(params[:id])
-      next_index = shop.products.index(product) + 1
-      redirect_to shop_product_path(shop, shop.products[next_index])
+      products = shop.products
+      next_index = (products.index(product) + 1) % products.length
+      redirect_to shop_product_path(shop, products[next_index])
     elsif id = params[:showroom_id]
       showroom = Showroom.find(id)
       product = Product.find(params[:id])
-      next_index = showroom.products.index(product) + 1
-      redirect_to showroom_product_path(showroom, showroom.products[next_index])
+      products = showroom.products
+      next_index = (products.index(product) + 1) % products.length
+      redirect_to showroom_product_path(showroom, products[next_index])
     elsif id = params[:service_id]
       service = Service.find(id)
       product = Product.find(params[:id])
-      next_index = service.products.index(product) + 1
-      redirect_to showroom_product_path(service, service.products[next_index])
+      products = service.products
+      next_index = (products.index(product) + 1) % products.length
+      redirect_to showroom_product_path(service, products[next_index])
     else
       product = Product.find(params[:id])
-      next_index = Product.best.index(product) + 1
-      redirect_to Product.best[next_index]
+      products = Product.best
+      next_index = (products.index(product) + 1) % products.length
+      redirect_to products[next_index]
     end
   end
 
