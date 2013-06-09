@@ -1,7 +1,7 @@
 oriental:
   name: Oriental
 vintage:
-  name: vintage
+  name: Vintage
 continental:
   name: Continental
 italian:
@@ -9,4 +9,8 @@ italian:
 sweetrussian:
   name: Sweet Russian
 bamboo:
-  name: bamboo
+  name: Bamboo
+minimal:
+  name: Minimal
+classic:
+  name: Classic

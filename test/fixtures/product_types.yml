@@ -1,8 +1,12 @@
 kitchen:
   name: Kitchens
-bedroom:
-  name: Bedrooms
+bed:
+  name: Beds
 chair:
   name: Chairs
 table:
   name: Tables
+wardrobe:
+  name: Wardrobes
+sofa:
+  name: Sofas

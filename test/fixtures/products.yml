@@ -1,20 +1,80 @@
-<% 1.upto(10) do |i| %>
-chair_<%= i %>:
- name: Chair_<%= i %>
+<%  chairs = {  :ecleptic => :oriental,
+                :innovative => :oriental,
+                :fabulous => :vintage,
+                :classic => :vintage,
+                :dinamic => :bamboo,
+                :young => :sweetrussian,
+                :innovative => :italian}
+    tables = {  :comfortable => :italian,
+                :compact => :minimal,
+                :minimal => :minimal,
+                :elegant => :sweetrussian,
+                :beautiful => :italian,
+                :squared => :minimal,
+                :essential => :minimal,
+                :crystal => :minimal}
+    kitchens = {:wooden => :oriental,
+                :country => :classic,
+                :alea => :bamboo,
+                :maxima => :sweetrussian}
+    wardrobes = {:gliss => :minimal,
+                :glide => :minimal,
+                :stack => :classic,
+                :tree => :bamboo,
+                :coloured => :oriental}
+    sofas = {   :freestyle => :sweetrussian,
+                :large => :minimal,
+                :lido => :vintage,
+                :skin => :minimal,
+                :still => :italian,
+                :dada => :vintage,
+                :sol => :italian,
+                :behemoth => :oriental}
+    beds = {    :clip => :minimal,
+                :glove => :italian,
+                :levante => :italian,
+                :oz => :vintage,
+                :wish => :vintage}
+%>
+
+<% chairs.each do |chair| %>
+<%= chair.first %>:
+ name: <%= chair.first.capitalize %>
  product_type: chair
- product_style: oriental
+ product_style: <%= chair.last %>
 <% end %>
 
-<% 1.upto(10) do |i| %>
-table_<%= i %>:
- name: table_<%= i %>
+<% tables.each do |table| %>
+<%= table.first %>:
+ name: <%= table.first.capitalize %>
  product_type: table
- product_style: continental
+ product_style: <%= table.last %>
 <% end %>
 
-<% 1.upto(10) do |i| %>
-kitchen_<%= i %>:
- name: kitchen_<%= i %>
+<% sofas.each do |sofa| %>
+<%= sofa.first %>:
+ name: <%= sofa.first.capitalize %>
+ product_type: sofa
+ product_style: <%= sofa.last %>
+<% end %>
+
+<% kitchens.each do |kitchen| %>
+<%= kitchen.first %>:
+ name: <%= kitchen.first.capitalize %>
  product_type: kitchen
- product_style: bamboo
+ product_style: <%= kitchen.last %>
+<% end %>
+
+<% wardrobes.each do |wardrobe| %>
+<%= wardrobe.first %>:
+ name: <%= wardrobe.first.capitalize %>
+ product_type: wardrobe
+ product_style: <%= wardrobe.last %>
+<% end %>
+
+<% beds.each do |bed| %>
+<%= bed.first %>:
+ name: <%= bed.first.capitalize %>
+ product_type: bed
+ product_style: <%= bed.last %>
 <% end %>

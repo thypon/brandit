@@ -1,8 +1,23 @@
 armani:
  name: Giorgio Armani
+ products: alea, coloured, wooden
 
 pininfarina:
  name: Pininfarina
+ products: alea, behemoth, sol, dada
 
 giugiaro:
  name: Giugiaro
+ products: sol
+
+dixon:
+ name: Tom Dixon
+ products: lido, levante
+
+evans:
+ name: Paul Evans
+ products: gliss, glide, stack, tree
+
+hoffman:
+ name: Josef Hoffman
+ products: stack, crystal, beautiful, elegant, minimal
