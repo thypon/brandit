@@ -31,38 +31,44 @@
     </div>
   </nav>
 </header>
-<aside>
-  <ul class="nav nav-list">
-    <li>
-      <%= link_to 'Products', url_for(controller: 'products', action: 'best') %>
-    </li>
-    <li>
-      <%= link_to 'Product Types', product_types_path %>
-    </li>
-    <li>
-      <%= link_to 'Product Styles', product_styles_path %>
-    </li>
-    <li>
-      <%= link_to 'Designers', designers_path %>
-    </li>
-    <li>
-      <%= link_to 'Services', services_path %>
-    </li>
-    <li>
-      <%= link_to 'Service Point Locations', service_point_cities_path %>
-    </li>
-    <li>
-      <%= link_to 'Shop Locations', shop_cities_path %>
-    </li>
-    <li>
-      <%= link_to 'Showrooms', showrooms_path %>
-    </li>
-    <li>
-      <%= link_to 'Best Events', url_for(controller: 'events', action: 'best') %>
-    </li>
-  </ul>
-</aside>
-<%= yield %>
 
+<div class="container">
+    <section class="row-fluid">
+        <aside class="span3 content">
+          <ul class="nav nav-list">
+            <li <%= 'class=active' if content_for? :products_active %>>
+              <%= link_to 'Products', products_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :product_types_active %>>
+              <%= link_to 'Product Types', product_types_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :product_styles_active %>>
+              <%= link_to 'Product Styles', product_styles_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :designers_active %>>
+              <%= link_to 'Designers', designers_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :services_active %>>
+              <%= link_to 'Services', services_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :service_point_cities_active %>>
+              <%= link_to 'Service Point Locations', service_point_cities_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :shop_cities_active %>>
+              <%= link_to 'Shop Locations', shop_cities_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :showrooms_active %>>
+              <%= link_to 'Showrooms', showrooms_path %>
+            </li>
+            <li <%= 'class=active' if content_for? :best_event_active %>>
+              <%= link_to 'Best Events', best_events_path %>
+            </li>
+          </ul>
+        </aside>
+        <div class="span9 content main">
+            <%= yield %>
+        </div>
+    </section>
+</div>
 </body>
 </html>

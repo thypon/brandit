@@ -13,6 +13,7 @@ class ServicesController < ApplicationController
   	else
   		@services = Service.all
       content_for :title, 'All Services'
+      content_for :services_active, true
   	end
   end
 

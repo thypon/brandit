@@ -8,6 +8,7 @@ class ShowroomsController < ApplicationController
     else
       content_for :title, 'All Showrooms'
       @showrooms = Showroom.all
+      content_for :showrooms_active, true
     end
   end
 

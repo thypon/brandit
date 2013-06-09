@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+
+.content {
+  border: 1px solid black;
+}
+
+.main {
+  padding-left: 1em;
+  padding-right: 1em;
+}

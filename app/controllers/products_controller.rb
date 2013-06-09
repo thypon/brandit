@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
     else
       content_for :title, 'Best Products'
       @products = Product.best
+      content_for :products_active, true
     end
   end
 

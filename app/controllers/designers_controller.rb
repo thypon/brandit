@@ -14,6 +14,7 @@ class DesignersController < ApplicationController
   		@designers = Designer.all
       @previous = @designers
       content_for :title, 'All Designers'
+      content_for :designers_active, true
   	end
   end
 
