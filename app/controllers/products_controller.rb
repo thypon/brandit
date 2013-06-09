@@ -32,6 +32,7 @@ class ProductsController < ApplicationController
       @products = service.products
     else
       content_for :title, 'Best Products'
+      #Products Best returns Enumerator
       @products = Product.best
       content_for :products_active, true
     end
@@ -112,7 +113,7 @@ class ProductsController < ApplicationController
     elsif id = params[:product_type_id]
       product_type = ProductType.find(id)
       product = Product.find(params[:id])
-      product_type.products
+      products = product_type.products
       next_index = (products.index(product) + 1) % products.length
       redirect_to product_type_product_path(product_type, products[next_index])
     elsif id = params[:designer_id]
@@ -180,8 +181,9 @@ class ProductsController < ApplicationController
       redirect_to showroom_product_path(service, service.products[previous_index])
     else
       product = Product.find(params[:id])
-      previous_index = Product.best.index(product) - 1
-      redirect_to Product.best[previous_index]
+      products = Product.best
+      previous_index = products.index(product) - 1
+      redirect_to products[previous_index]
     end
   end
 end
