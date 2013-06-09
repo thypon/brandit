@@ -1,12 +1,12 @@
 class EventsController < ApplicationController
   def index
-    content_for :title, 'Best Events'
-    @events = Event.best
+    content_for :title, 'Events'
+    @events = Event.all
   end
 
   def best
-    content_for :title, 'Events'
-    @events = Event.all
+    content_for :title, 'Best Events'
+    @events = Event.best
     content_for :best_event_active, true
 
     render 'index'
