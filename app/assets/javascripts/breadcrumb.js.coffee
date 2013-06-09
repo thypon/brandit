@@ -21,8 +21,6 @@ for path in paths
 
 $(document).ready ->
   $breadcrumb = $(".breadcrumb")
-  console.log $breadcrumb
-  console.log ps
 
   last = ps.pop()
 

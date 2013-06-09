@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
       else
         redirect_to product_style
       end
-    elsif id = params[:product_types_id]
+    elsif id = params[:product_type_id]
       product_type = ProductType.find(id)
       if params[:id]
         redirect_to product_type_products_path(product_type)
@@ -108,7 +108,7 @@ class ProductsController < ApplicationController
       product = Product.find(params[:id])
       next_index = product_style.products.index(product) + 1
       redirect_to product_style_product_path(product_style, product_style.products[next_index])
-    elsif id = params[:product_types_id]
+    elsif id = params[:product_type_id]
       product_type = ProductType.find(id)
       product = Product.find(params[:id])
       next_index = product_type.products.index(product) + 1
@@ -142,7 +142,7 @@ class ProductsController < ApplicationController
       product = Product.find(params[:id])
       previous_index = product_style.products.index(product) - 1
       redirect_to product_style_product_path(product_style, product_style.products[previous_index])
-    elsif id = params[:product_types_id]
+    elsif id = params[:product_type_id]
       product_type = ProductType.find(id)
       product = Product.find(params[:id])
       previous_index = product_type.products.index(product) - 1
