@@ -1,2 +1,9 @@
-<h1>Company#show</h1>
-<p>Find me in app/views/company/show.html.erb</p>
+<% content_for :structural_links do %>
+    <li class="nav-header">Company</li>
+    <li class="active">
+      <%= link_to 'General Info', company_path %>
+    </li>
+    <li>
+      <%= link_to 'Tradition & Technology', :action => :show_more %>
+    </li>
+<% end %>

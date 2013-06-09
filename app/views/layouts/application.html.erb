@@ -64,6 +64,11 @@
               <%= link_to 'Best Events', best_events_path %>
             </li>
           </ul>
+          <% if content_for? :structural_links %>
+          <ul class="nav nav-list content">
+            <%= yield :structural_links %>
+          </ul>
+          <% end %>
         </aside>
         <div class="span9">
           <div class="<%= 'content main' unless content_for?(:split) %>">
