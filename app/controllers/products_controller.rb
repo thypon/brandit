@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
   end
 
   def gallery
-    @product = Product.find(id)
+    @product = Product.find(params[:id])
     content_for :title, "#{@product.name} - Gallery"
     @photos = @product.product_gallery_photos
   end
