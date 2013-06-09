@@ -2,6 +2,8 @@
 <p>Find me in app/views/products/show.html.erb</p>
 
 <h1><%= @product.name %></h1>
+<p><%= @product.description %></p>
+<%= image_tag @product.photo %>
 
 <p>Designers:
 	<% @product.designers.each do |designer| %>
@@ -15,6 +17,16 @@
 	<% end %>
 </p>
 
-<p><%= link_to "Showrooms", product_showrooms_path(@product) %></p>
+<%= link_to "Showrooms", product_showrooms_path(@product) %>
 
-<p><%= link_to "Shops", product_shops_path(@product) %></p>
+<%= link_to "Shops", product_shops_path(@product) %>
+
+<% content_for :structural_links do %>
+    <li class="nav-header"><%= @product.name %></li>
+    <li class="active">
+      <%= link_to 'General Info', @product %>
+    </li>
+    <li>
+      <%= link_to 'Photogallery', :action => :gallery %>
+    </li>
+<% end %>
