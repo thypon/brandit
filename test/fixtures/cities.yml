@@ -1,10 +1,14 @@
-Milan:
+milan:
   name: Milan
-Rome:
+rome:
   name: Rome
-London:
+london:
   name: London
-Peschici:
+peschici:
   name: Peschici
-Genova:
-  name: Genova
+geneva:
+  name: Geneva
+madrid:
+  name: madrid
+paris:
+  name: Paris
