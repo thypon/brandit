@@ -1,3 +1,13 @@
+unless String::capitalize?
+  String::capitalize = -> this.replace /(^|\s)([a-z])/g , (m,p1,p2) -> p1+p2.toUpperCase()
+
+unless String::endsWith?
+  String::endsWith = (suffix) -> this.indexOf(suffix, this.length - suffix.length) != -1
+
+humanize = (string) ->
+  string.replace(/_/g, " ").capitalize()
+
+
 norm_path = if document.location.pathname.endsWith '/'
               document.location.pathname
             else
@@ -8,11 +18,6 @@ paths = document.location.pathname.split('/')
 paths = (path for path in paths when path isnt "")
 
 paths.pop()
-
-humanize = (string) ->
-  string.replace(/_/g, " ").capitalize()
-
-String::capitalize = -> this.replace /(^|\s)([a-z])/g , (m,p1,p2) -> p1+p2.toUpperCase()
 
 up_name = humanize paths.pop()
 
