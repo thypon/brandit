@@ -67,6 +67,23 @@
         </aside>
         <div class="span9 content main">
             <%= yield %>
+            <% case yield :pattern %>
+            <% when 'igt' then %>
+              <ul class="pager">
+                <li><a href="#">Previous</a></li>
+                <li><a href="#">Up</a></li>
+                <li><a href="#">Next</a></li>
+              </ul>
+            <% when 'gt' then %>
+              <ul class="pager">
+                <li><a href="#">Previous</a></li>
+                <li><a href="#">Next</a></li>
+              </ul>
+            <% else %>
+              <ul class="pager">
+                <li><a href="#">Up</a></li>
+              </ul>
+            <% end %>
         </div>
     </section>
 </div>
