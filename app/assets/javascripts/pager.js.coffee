@@ -7,7 +7,6 @@ unless String::endsWith?
 humanize = (string) ->
   string.replace(/_/g, " ").capitalize()
 
-
 norm_path = if document.location.pathname.endsWith '/'
               document.location.pathname
             else
