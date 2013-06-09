@@ -33,9 +33,9 @@
 </header>
 
 <div class="container">
-    <section class="row-fluid">
-        <aside class="span3 content">
-          <ul class="nav nav-list">
+    <section class="row">
+        <aside class="span3">
+          <ul class="nav nav-list content">
             <li <%= 'class=active' if content_for? :products_active %>>
               <%= link_to 'Products', products_path %>
             </li>
@@ -65,7 +65,8 @@
             </li>
           </ul>
         </aside>
-        <div class="span9 content main">
+        <div class="span9">
+          <div class="<%= 'content main' unless content_for?(:split) %>">
             <% case yield :pattern %>
             <% when 'igt' then %>
               <ul class="pager">
@@ -84,6 +85,7 @@
               </ul>
             <% end %>
             <%= yield %>
+          </div>
         </div>
     </section>
 </div>
