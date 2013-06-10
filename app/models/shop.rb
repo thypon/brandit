@@ -2,7 +2,9 @@ class Shop < ActiveRecord::Base
   ################
   ## Attributes ##
   ################
-  attr_accessible :address, :contacts, :description
+  attr_accessible :address, :contacts, :description, :map
+
+  has_attached_file :map
 
   ###############
   ## Relations ##

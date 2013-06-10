@@ -2,7 +2,9 @@ class ServicePoint < ActiveRecord::Base
   ################
   ## Attributes ##
   ################
-  attr_accessible :address, :contacts
+  attr_accessible :address, :contacts, :map
+
+  has_attached_file :map
 
   ###############
   ## Relations ##
