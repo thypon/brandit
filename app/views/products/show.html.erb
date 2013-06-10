@@ -10,13 +10,11 @@
 
 <p>Services:
 	<% @product.services.each do |service| %>
-	<%= link_to service.name, [@product, service] %>
+	<%= link_to service.name, [@product, service] %> |
 	<% end %>
 </p>
 
-<%= link_to "Showrooms", product_showrooms_path(@product) %>
-
-<%= link_to "Shops", product_shops_path(@product) %>
+<%= link_to "Showrooms", product_showrooms_path(@product) %> | <%= link_to "Shops", product_shops_path(@product) %>
 
 <% content_for :structural_links do %>
     <li class="nav-header"><%= @product.name %></li>
