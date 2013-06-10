@@ -1,2 +1,10 @@
 <h1>Services#show</h1>
 <p>Find me in app/views/services/show.html.erb</p>
+
+<h1><%= @service.name %></h1>
+
+<p><%= @service.description %></p>
+
+<%= link_to "Products", service_products_path(@service) %><br>
+<%= link_to "Designers", service_designers_path(@service) %><br>
+<%= link_to "Service Points", service_service_points_path(@service) %><br>
