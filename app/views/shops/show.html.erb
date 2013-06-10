@@ -1,8 +1,18 @@
 <h1>Shops#show</h1>
 <p>Find me in app/views/shops/show.html.erb</p>
 
-<h1><%= @shop.city.name + " - " + @shop.address %></h1>
-<p><%= @shop.description %></p>
-<p><%= @shop.contacts %></p>
+<div class="row">
+	<div class="span5">
+		<div class="content main">
+		<h1><%= @shop.city.name + " - " + @shop.address %></h1>
+		<p><%= @shop.description %></p>
+		<p><%= @shop.contacts %></p>
+		<%= link_to "Products", shop_products_path(@shop) %>
+	</div>
 
-<%= link_to "Products", shop_products_path(@shop) %>
+	<div class="span4">
+	    <div class="content main">
+	      <%= image_tag @shop.map %>
+		</div>
+	</div>
+</div>

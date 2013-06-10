@@ -15,6 +15,7 @@ class ShopsController < ApplicationController
 
   def show
     content_for :pattern, :i
+    content_for :split, true
 
     @shop = Shop.find(params[:id])
     content_for :title, @shop.address
