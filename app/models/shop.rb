@@ -3,8 +3,7 @@ class Shop < ActiveRecord::Base
   ## Attributes ##
   ################
   attr_accessible :address, :contacts, :description, :map
-
-  has_attached_file :map
+  has_attached_file :map, :default_url => '/assets/google-map.png'
 
   ###############
   ## Relations ##

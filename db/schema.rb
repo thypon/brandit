@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609143307) do
+ActiveRecord::Schema.define(:version => 20130610112546) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -120,8 +120,12 @@ ActiveRecord::Schema.define(:version => 20130609143307) do
     t.text     "contacts"
     t.integer  "city_id"
     t.integer  "service_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "map_file_name"
+    t.string   "map_content_type"
+    t.integer  "map_file_size"
+    t.datetime "map_updated_at"
   end
 
   add_index "service_points", ["city_id"], :name => "index_service_points_on_city_id"
@@ -139,8 +143,12 @@ ActiveRecord::Schema.define(:version => 20130609143307) do
     t.text     "contacts"
     t.text     "description"
     t.integer  "city_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "map_file_name"
+    t.string   "map_content_type"
+    t.integer  "map_file_size"
+    t.datetime "map_updated_at"
   end
 
   add_index "shops", ["city_id"], :name => "index_shops_on_city_id"
