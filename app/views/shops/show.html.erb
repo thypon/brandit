@@ -1,2 +1,8 @@
 <h1>Shops#show</h1>
 <p>Find me in app/views/shops/show.html.erb</p>
+
+<h1><%= @shop.city.name + " - " + @shop.address %></h1>
+<p><%= @shop.description %></p>
+<p><%= @shop.contacts %></p>
+
+<%= link_to "Products", shop_products_path(@shop) %>
