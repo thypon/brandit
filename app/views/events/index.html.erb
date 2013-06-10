@@ -10,12 +10,6 @@
 
 <ul>
 <% for event in @events %>
-    <li>
-      <% if content_for? :best_event_active %>
-        <%= link_to event.name, best_event_path(event) %>
-      <% else %>
-        <%= link_to event.name, event %>
-      <% end %>
-    </li>
+    <li><%= link_to event.name, event %></li>
 <% end %>
 </ul>
