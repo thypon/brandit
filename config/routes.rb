@@ -1,4 +1,6 @@
 Brandit::Application.routes.draw do
+  resources :best_events
+
   resource :homepage, :controller => :homepage
 
   resource :where_we_are, :controller => :where_we_are
