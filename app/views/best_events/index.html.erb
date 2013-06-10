@@ -1,2 +1,17 @@
-<h1>BestEvents#index</h1>
-<p>Find me in app/views/best_events/index.html.erb</p>
+<% content_for :structural_links do %>
+    <li class="nav-header">Events</li>
+    <li class="active">
+      <%= link_to 'Best Events', best_events_path %>
+    </li>
+    <li>
+      <%= link_to 'All Events', events_path %>
+    </li>
+<% end %>
+
+<h1>All Events</h1>
+
+<ul>
+  <% for event in @events %>
+      <li><%= link_to event.name, best_event_path(event) %></li>
+  <% end %>
+</ul>

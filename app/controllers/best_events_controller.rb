@@ -1,6 +1,7 @@
 class BestEventsController < ApplicationController
   def index
     content_for :title, 'Best Events'
+    content_for :best_event_active, true
     @events = Event.best
   end
 
@@ -23,7 +24,7 @@ class BestEventsController < ApplicationController
 
     next_index = (events.index(event) + 1) % events.length
 
-    redirect_to events[next_index]
+    redirect_to best_event_path events[next_index]
   end
 
   def previous
@@ -33,7 +34,7 @@ class BestEventsController < ApplicationController
 
     previous_index = events.index(event) - 1
 
-    redirect_to events[previous_index]
+    redirect_to best_event_path events[previous_index]
 
   end
 end
