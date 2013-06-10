@@ -17,7 +17,6 @@ class ServicePointsController < ApplicationController
 
   def show
     content_for :pattern, :i
-    content_for :split, true
 
   	@service_point = ServicePoint.find(params[:id])
     content_for :title, @service_point.address

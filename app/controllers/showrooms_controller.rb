@@ -20,7 +20,6 @@ class ShowroomsController < ApplicationController
 
   def show
     content_for :pattern, :i
-    content_for :split, true
 
     @showroom = Showroom.find(params[:id])
     content_for :title, @showroom.name

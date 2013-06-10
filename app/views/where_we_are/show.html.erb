@@ -1,37 +1,29 @@
-<div class="row">
-  <div class="span5">
-    <div class="content main">
-      <p>Come and see us at:</p>
+<p>Come and see us at:</p>
 
-      <address>
-        <strong>Brandit, Inc.</strong><br>
-        9 Broadway Rise<br>
-        Southampton<br>
-        South Hamphshire<br>
-        <abbr title="Phone">P:</abbr> (123) 456-7890
-      </address>
+<address>
+  <strong>Brandit, Inc.</strong><br>
+  9 Broadway Rise<br>
+  Southampton<br>
+  South Hamphshire<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
 
-      <p>
-        <strong>Opening Times</strong><br>
-          <dl class="dl-horizontal">
-            <dt>Monday to Friday:</dt>
-            <dd>9am - 5pm</dd>
-            <dt>Saturday</dt>
-            <dd>12noon - 5pm</dd>
-            <dt>Sunday:</dt>
-            <dd>CLOSED</dd>
-          </dl>
-      </p>
+<p>
+  <strong>Opening Times</strong><br>
+<dl class="dl-horizontal">
+  <dt>Monday to Friday:</dt>
+  <dd>9am - 5pm</dd>
+  <dt>Saturday</dt>
+  <dd>12noon - 5pm</dd>
+  <dt>Sunday:</dt>
+  <dd>CLOSED</dd>
+</dl>
+</p>
 
-      <p>
-        FREE on-site parking is available in our car park.
-      </p>
-    </div>
-  </div>
-  <div class="span4">
-    <div class="content main">
-      <%= image_tag 'google-map.png' %>
-    </div>
-  </div>
+<p>
+  FREE on-site parking is available in our car park.
+</p>
 
-</div>
+<% content_for :extra do %>
+  <%= image_tag 'google-map.png' %>
+<% end %>

@@ -71,26 +71,59 @@
           <% end %>
         </aside>
         <div class="span9">
-          <div class="<%= 'content main' unless content_for?(:split) %>">
-            <% case yield :pattern %>
-            <% when 'igt' then %>
-              <ul class="pager">
-                <li><a class="previous" href="#">Previous</a></li>
-                <li><a class="up" href="#">Up</a></li>
-                <li><a class="next" href="#">Next</a></li>
-              </ul>
-            <% when 'gt' then %>
-              <ul class="pager">
-                <li><a class="previous" href="#">Previous</a></li>
-                <li><a class="next" href="#">Next</a></li>
-              </ul>
-            <% when 'i' then %>
-              <ul class="pager">
-                <li><a class="up" href="#">Up</a></li>
-              </ul>
-            <% end %>
-            <%= yield %>
-          </div>
+          <% if content_for? :extra %>
+            <div class="row">
+              <div class="span5">
+                <div class="content main">
+                  <% case yield :pattern %>
+                  <% when 'igt' then %>
+                      <ul class="pager">
+                        <li><a class="previous" href="#">Previous</a></li>
+                        <li><a class="up" href="#">Up</a></li>
+                        <li><a class="next" href="#">Next</a></li>
+                      </ul>
+                  <% when 'gt' then %>
+                      <ul class="pager">
+                        <li><a class="previous" href="#">Previous</a></li>
+                        <li><a class="next" href="#">Next</a></li>
+                      </ul>
+                  <% when 'i' then %>
+                      <ul class="pager">
+                        <li><a class="up" href="#">Up</a></li>
+                      </ul>
+                  <% end %>
+
+                  <%= yield %>
+                </div>
+              </div>
+              <div class="span4">
+                <div class="content main">
+                  <%= yield :extra %>
+                </div>
+              </div>
+            </div>
+          <% else %>
+              <div class="content main">
+                <% case yield :pattern %>
+                <% when 'igt' then %>
+                    <ul class="pager">
+                      <li><a class="previous" href="#">Previous</a></li>
+                      <li><a class="up" href="#">Up</a></li>
+                      <li><a class="next" href="#">Next</a></li>
+                    </ul>
+                <% when 'gt' then %>
+                    <ul class="pager">
+                      <li><a class="previous" href="#">Previous</a></li>
+                      <li><a class="next" href="#">Next</a></li>
+                    </ul>
+                <% when 'i' then %>
+                    <ul class="pager">
+                      <li><a class="up" href="#">Up</a></li>
+                    </ul>
+                <% end %>
+                <%= yield %>
+              </div>
+          <% end %>
         </div>
     </section>
 </div>
