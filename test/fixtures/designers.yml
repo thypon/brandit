@@ -1,23 +1,29 @@
 armani:
  name: Giorgio Armani
  products: alea, coloured, wooden
+ services: design
 
 pininfarina:
  name: Pininfarina
  products: alea, behemoth, sol, dada
+ services: design
 
 giugiaro:
  name: Giugiaro
  products: sol
+ services: design
 
 dixon:
  name: Tom Dixon
  products: lido, levante
+ services: design
 
 evans:
  name: Paul Evans
  products: gliss, glide, stack, tree
+ services: design
 
 hoffman:
  name: Josef Hoffman
  products: stack, crystal, beautiful, elegant, minimal
+ services: design
