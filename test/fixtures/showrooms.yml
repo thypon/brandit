@@ -1,0 +1,14 @@
+<% addresses = {[:beatles, "Abbey Road, 15"] => "Beatles and co.",
+                [:badborn, "Kennedy place, 2"] => "Badborn furniture",
+                [:arredo, "San Cristoforo Road, 33"] => "Arredo più",
+                [:winehouse, "Warwick Avenue, 16"] => "The wine-house",
+                [:hp, "Grimmauld Place, 12"] => "Expecto Patronum",
+                [:dei, "Golgi Road, 42"] => "Dei dell'arredo",
+                [:more, "Leonardo da Vinci Place, 1"] => "Furnitures & more"}%>
+
+<% addresses.each do |address| %>
+<%= address.first.first %>:
+ name: <%= address.last %>
+ address: <%= address.first.last %>
+ products: ecleptic, innovative, minimal, beautiful, wooden, glide, skin, glove
+<% end %>
