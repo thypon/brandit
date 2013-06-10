@@ -13,7 +13,7 @@ class ShowroomsController < ApplicationController
   end
 
   def gallery
-    @showroom = Showroom.find(id)
+    @showroom = Showroom.find(params[:id])
     content_for :title, "#{@showroom.name} - Gallery"
     @photos = @showroom.showroom_gallery_photos
   end
