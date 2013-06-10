@@ -10,6 +10,8 @@ class ShopsController < ApplicationController
       @previous = city
       content_for :title, city.name
       @shops = city.shops
+    else
+      redirect_to shop_cities_path
     end
   end
 

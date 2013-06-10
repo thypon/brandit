@@ -10,6 +10,8 @@ class ServicePointsController < ApplicationController
       @previous = service
   		@service_points = service.service_points
       content_for :title, service.name
+    else
+      redirect_to service_point_cities_path
   	end
   end
 
