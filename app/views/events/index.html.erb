@@ -8,6 +8,14 @@
     </li>
 <% end %>
 
+<h1>
+	<% if content_for? :best_event_active %>
+	<%= "Best Events" %>
+	<% else %>
+	<%= "All events" %>
+	<% end %>
+</h1>
+
 <ul>
 <% for event in @events %>
     <li><%= link_to event.name, event %></li>

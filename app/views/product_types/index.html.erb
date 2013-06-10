@@ -1,6 +1,4 @@
-<h1>ProductTypes#index</h1>
-<p>Find me in app/views/product_types/index.html.erb</p>
-
+<h1>All types</h1>
 <ul>
   <% for type in @types  %>
       <li><%= link_to type.name, product_type_products_url(type) %></li>
