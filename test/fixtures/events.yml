@@ -1,0 +1,19 @@
+salone:
+ name: Salone del mobile
+ major: true
+
+fiera:
+ name: Arreda casa a Rho
+ major: true
+
+artigiano:
+ name: L'artigianato in fiera
+ major: true
+
+est:
+ name: La fiera dell'est
+ major: false
+
+bamboo:
+ name: Bamboo furniture 2010
+ major: false
