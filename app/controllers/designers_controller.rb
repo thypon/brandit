@@ -71,7 +71,7 @@ class DesignersController < ApplicationController
   end
 
   def up
-  	if params[:service_id]
+  	if id = params[:service_id]
   		service = Service.find(id)
       if params[:id]
         redirect_to service_designers_path(service)
