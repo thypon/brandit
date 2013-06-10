@@ -1,5 +1,11 @@
 Brandit::Application.routes.draw do
-  resources :best_events
+  resources :best_events do
+    member do
+      get 'up'
+      get 'next'
+      get 'previous'
+    end
+  end
 
   resource :homepage, :controller => :homepage
 
@@ -16,11 +22,6 @@ Brandit::Application.routes.draw do
   resources :events do
     member do
       get 'up'
-      get 'next'
-      get 'previous'
-    end
-    collection do
-      get 'best'
     end
   end
 

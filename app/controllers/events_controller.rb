@@ -4,31 +4,15 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  def best
-    content_for :title, 'Best Events'
-    @events = Event.best
-    content_for :best_event_active, true
-
-    render 'index'
-  end
-
   def show
     #TODO Find a way to take best from url
-    if params[:best]
-      content_for :pattern, :igt
-    else
-      content_for :pattern, :i
-    end
+    content_for :pattern, :i
 
     @event = Event.find(params[:id])
     content_for :title, @event.name
   end
 
   def up
-    if params[:best]
-      redirect_to events_path, :best => true
-    else
-      redirect_to events_path
-    end
+    redirect_to events_path
   end
 end
