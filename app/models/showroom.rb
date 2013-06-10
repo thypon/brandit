@@ -2,8 +2,9 @@ class Showroom < ActiveRecord::Base
   ################
   ## Attributes ##
   ################
-  attr_accessible :address, :contacts, :description, :name, :photo
+  attr_accessible :address, :contacts, :description, :name, :photo, :map
   has_attached_file :photo
+  has_attached_file :map, :default_url => '/assets/google-map.png'
 
   ###############
   ## Relations ##

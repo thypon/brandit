@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130610112546) do
+ActiveRecord::Schema.define(:version => 20130610122326) do
 
   create_table "cities", :force => true do |t|
     t.string   "name"
@@ -176,6 +176,10 @@ ActiveRecord::Schema.define(:version => 20130610112546) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "map_file_name"
+    t.string   "map_content_type"
+    t.integer  "map_file_size"
+    t.datetime "map_updated_at"
   end
 
 end

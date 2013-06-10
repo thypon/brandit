@@ -1,2 +1,27 @@
 <h1>Showrooms#show</h1>
 <p>Find me in app/views/showrooms/show.html.erb</p>
+
+
+<h1><%= @showroom.name %></h1>
+
+<div class="row">
+	<div class="span4">
+	    <div class="content main">
+	      <%= image_tag @showroom.photo %>
+		</div>
+	</div>
+
+	<div class="span3">
+		<div class="content main">
+			<p><%= @showroom.description %></p>
+			<p><%= @showroom.contacts %></p>
+			<%= link_to "Products", showroom_products_path(@showroom) %>
+	</div>
+	</div>
+
+	<div class="span4">
+	    <div class="content main">
+	      <%= image_tag @showroom.map %>
+		</div>
+	</div>
+</div>
