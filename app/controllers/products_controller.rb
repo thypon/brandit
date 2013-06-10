@@ -18,7 +18,7 @@ class ProductsController < ApplicationController
     elsif id = params[:shop_id]
       shop = Shop.find(id)
       @previous = shop
-      content_for :title, shop.name
+      content_for :title, shop.address
       @products = shop.products
     elsif id = params[:showroom_id]
       showroom = Showroom.find(id)

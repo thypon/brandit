@@ -1,17 +1,63 @@
-<% 1.upto(6) do |i| %>
-milan_<%= i %>:
- address: Shop Milan_<%= i %>
- city: Milan
+<% addresses = {[1, "Abbey Road, 15"] => [:ecleptic, :innovative, :minimal, :beautiful, :wooden],
+                [2, "Kennedy place, 2"] => [:glide, :coloured, :skin],
+                [3, "San Cristoforo Road, 33"] => [:coloured, :wooden, :behemoth, :levante],
+                [4, "Warwick Avenue, 16"] => [:tree, :stack],
+                [5, "Grimmauld Place, 12"] => [:country, :alea, :maxima],
+                [6, "Golgi Road, 42"] => [:innovative, :young, :wooden, :skin, :stack, :glide],
+                [7, "Leonardo da Vinci Place, 1"] => [:large, :lido, :sol, :glove, :clip]}%>
+
+<% addresses.each do |address| %>
+milan_<%= address.first.first %>:
+ address: <%= address.first.last %>
+ city: milan
+ products: ecleptic, innovative, minimal, beautiful, wooden
 <% end %>
 
-<% 1.upto(7) do |i| %>
-london_<%= i %>:
- address: Shop London_<%= i %>
- city: London
+<% addresses.each do |address| %>
+paris_<%= address.first.first %>:
+ address: <%= address.first.last %>
+ city: paris
+ products: glide, coloured, skin
 <% end %>
 
-<% 1.upto(5) do |i| %>
-rome_<%= i %>:
- address: Shop Rome_<%= i %>
- city: Rome
+<% addresses.each do |address| %>
+london_<%= address.first.first %>:
+ address: <%= address.first.last%>
+ city: london
+ products: coloured, wooden, behemoth, levante
+<% end %>
+
+<% addresses.each do |address| %>
+peschici_<%= address.first.first %>:
+ address: <%= address.first.last%>
+ city: peschici
+ products: tree, stack
+<% end %>
+
+<% addresses.each do |address| %>
+madrid_<%= address.first.first %>:
+ address: <%= address.first.last%>
+ city: madrid
+ products: country, alea, maxima
+<% end %>
+
+<% addresses.each do |address| %>
+madrid_<%= address.first.first %>:
+ address: <%= address.first.last%>
+ city: madrid
+ products: innovative, young, wooden, skin, stack, glide
+<% end %>
+
+<% addresses.each do |address| %>
+geneva_<%= address.first.first %>:
+ address: <%= address.first.last%>
+ city: geneva
+ products: large, lido, sol, glove, clip
+<% end %>
+
+<% addresses.each do |address| %>
+rome_<%= address.first.first %>:
+ address: <%= address.first.last %>
+ city: rome
+ products: coloured, wooden, behemoth, levante
 <% end %>
