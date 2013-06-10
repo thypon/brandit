@@ -35,7 +35,7 @@ class ShowroomsController < ApplicationController
         redirect_to product
       end
     else
-      redirect_to products_path
+      redirect_to showrooms_path
     end
   end
 end
