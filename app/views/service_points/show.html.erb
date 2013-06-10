@@ -1,2 +1,10 @@
 <h1>ServicePoints#show</h1>
 <p>Find me in app/views/service_points/show.html.erb</p>
+
+<h1><%= @service_point.city.name + " - " + @service_point.service.name %></h1>
+
+<p><strong><%= @service_point.address %></strong></p>
+<p><%= @service_point.contacts %></p>
+
+<!-- TODO sistemare il link, dovrebbe essere service_point_city_service_point_service_path -->
+<%= link_to @service_point.service.name, service_path(@service_point.service) %>

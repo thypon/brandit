@@ -22,6 +22,8 @@ class ServicesController < ApplicationController
       content_for :pattern, :igt
   	elsif params[:product_id]
       content_for :pattern, :i
+    elsif id = params[:service_point_id]
+      content_for :pattern, :none
   	else
       content_for :pattern, :igt
     end

@@ -31,7 +31,7 @@ london_<%= address.first.first %>:
 peschici_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: peschici
- service: <%= address.last %>i
+ service: <%= address.last %>
 <% end %>
 
 <% addresses.each do |address| %>
