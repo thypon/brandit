@@ -4,7 +4,8 @@ class Product < ActiveRecord::Base
   ################
   attr_accessible :description, :name, :photo
   has_attached_file :photo,
-                    :url => '/assets/products/:id.:extension'
+                    :url => '/assets/products/:id.:extension',
+                    :path => ':rails_root/public/assets/products/:id.:extension'
 
   ###############
   ## Relations ##

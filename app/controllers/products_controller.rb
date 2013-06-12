@@ -191,4 +191,14 @@ class ProductsController < ApplicationController
       redirect_to products[previous_index]
     end
   end
+
+  def create
+    @product = Product.new(params[:product])
+
+    if @product.save
+      redirect_to @product
+    else
+      redirect_to "404.html"
+    end
+  end
 end
