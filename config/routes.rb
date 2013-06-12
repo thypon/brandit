@@ -68,6 +68,8 @@ Brandit::Application.routes.draw do
       end
     end
     resources :products do
+      resources :product_gallery_photos
+
       member do
         get 'up'
         get 'next'
@@ -90,6 +92,8 @@ Brandit::Application.routes.draw do
 
   resources :designers do
     resources :products do
+      resources :product_gallery_photos
+
       member do
         get 'up'
         get 'next'
@@ -122,6 +126,8 @@ Brandit::Application.routes.draw do
 
   resources :product_types do
     resources :products do
+      resources :product_gallery_photos
+
       member do
         get 'up'
         get 'next'
@@ -135,6 +141,8 @@ Brandit::Application.routes.draw do
 
   resources :product_styles do
     resources :products do
+      resources :product_gallery_photos
+      
       member do
         get 'up'
         get 'next'
@@ -178,6 +186,7 @@ Brandit::Application.routes.draw do
       end
     end
     resources :showrooms do
+      resources :showroom_gallery_photos
       member do
         get 'up'
       end
@@ -195,6 +204,8 @@ Brandit::Application.routes.draw do
 
   resources :shops do
     resources :products do
+      resources :product_gallery_photos
+
       member do
         get 'up'
         get 'next'
@@ -214,7 +225,11 @@ Brandit::Application.routes.draw do
   end
 
   resources :showrooms do
+    resources :showroom_gallery_photos
+
     resources :products do
+      resources :product_gallery_photos
+
       member do
         get 'up'
         get 'next'

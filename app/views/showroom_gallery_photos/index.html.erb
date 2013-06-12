@@ -1,0 +1,15 @@
+<h1><%= @showroom.name %> - Photogallery</h1>
+
+<% content_for :structural_links do %>
+    <li class="nav-header"><%= @showroom.name %></li>
+    <li>
+      <%= link_to 'General Info', @showroom %>
+    </li>
+    <li class="active">
+      <%= link_to 'Photogallery', showroom_showroom_gallery_photos_path(@showroom) %>
+    </li>
+<% end %>
+
+<% @showroom_gallery_photos.each do |photo| %>
+    <%= image_tag photo.url %>
+<% end %>
