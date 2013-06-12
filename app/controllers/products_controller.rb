@@ -39,15 +39,18 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+
     if params[:product_style_id] || params[:service_id]
       content_for :pattern, :i
     elsif params[:product_type_id]
       content_for :pattern, :igt
-    else
+    elsif @product.best?
       content_for :pattern, :gt
+    else
+      content_for :pattern, :i
     end
 
-    @product = Product.find(params[:id])
     content_for :title, @product.name
   end
 
@@ -100,6 +103,8 @@ class ProductsController < ApplicationController
       else
         redirect_to service
       end
+    else
+      redirect_to products_path
     end
   end
 

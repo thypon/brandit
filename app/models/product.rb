@@ -20,4 +20,8 @@ class Product < ActiveRecord::Base
     #method "group" is to select DISTINCT products
     self.joins(:designers).group(:id)
   end
+
+  def best?
+    self.class.best.index self != nil
+  end
 end
