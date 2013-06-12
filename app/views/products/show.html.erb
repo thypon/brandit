@@ -22,6 +22,6 @@
       <%= link_to 'General Info', @product %>
     </li>
     <li>
-      <%= link_to 'Photogallery', :action => :gallery %>
+      <%= link_to 'Photogallery', product_product_gallery_photos_path(@product) %>
     </li>
 <% end %>

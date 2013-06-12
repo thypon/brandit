@@ -6,6 +6,10 @@
       <%= link_to 'General Info', @product %>
     </li>
     <li class="active">
-      <%= link_to 'Photogallery', :action => :gallery %>
+      <%= link_to 'Photogallery', product_product_gallery_photos_path(@product) %>
     </li>
+<% end %>
+
+<% @product_gallery_photos.each do |photo| %>
+    <%= image_tag photo.url %>
 <% end %>

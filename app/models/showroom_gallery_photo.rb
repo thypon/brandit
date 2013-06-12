@@ -10,6 +10,8 @@ class ShowroomGalleryPhoto < ActiveRecord::Base
   ###############
   belongs_to :showroom
 
+  validates_attachment_presence :this
+
   ######################
   ## Simple Delegator ##
   ######################

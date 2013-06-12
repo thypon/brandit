@@ -1,4 +1,5 @@
 Brandit::Application.routes.draw do
+
   resources :best_events do
     member do
       get 'up'
@@ -71,7 +72,6 @@ Brandit::Application.routes.draw do
         get 'up'
         get 'next'
         get 'previous'
-        get 'gallery'
       end
       collection do
         get 'up'
@@ -94,7 +94,6 @@ Brandit::Application.routes.draw do
         get 'up'
         get 'next'
         get 'previous'
-        get 'gallery'
       end
       collection do
         get 'up'
@@ -141,7 +140,6 @@ Brandit::Application.routes.draw do
         get 'up'
         get 'next'
         get 'previous'
-        get 'gallery'
       end
       collection do
         get 'up'
@@ -150,6 +148,8 @@ Brandit::Application.routes.draw do
   end
 
   resources :products do
+    resources :product_gallery_photos
+
     resources :designers  do
       member do
         get 'up'
@@ -202,7 +202,6 @@ Brandit::Application.routes.draw do
         get 'up'
         get 'next'
         get 'previous'
-        get 'gallery'
       end
       collection do
         get 'up'
@@ -223,7 +222,6 @@ Brandit::Application.routes.draw do
         get 'up'
         get 'next'
         get 'previous'
-        get 'gallery'
       end
       collection do
         get 'up'
@@ -232,7 +230,6 @@ Brandit::Application.routes.draw do
 
     member do
       get 'up'
-      get 'gallery'
     end
   end
 

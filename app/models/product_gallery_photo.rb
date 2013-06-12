@@ -10,6 +10,8 @@ class ProductGalleryPhoto < ActiveRecord::Base
   ###############
   belongs_to :product
 
+  validates_attachment_presence :this
+
   ######################
   ## Simple Delegator ##
   ######################
