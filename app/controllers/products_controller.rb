@@ -192,16 +192,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def create
-    @product = Product.new(params[:product])
-
-    if @product.save
-      redirect_to @product
-    else
-      throw Exception
-    end
-  end
-
   def edit
     @product = Product.find(params[:id])
   end
