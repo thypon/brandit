@@ -37,14 +37,12 @@
                 :wish => :vintage}
 %>
 
-<% chairs.each_with_index do |chair, index| %>
+<% chairs.each do |chair| %>
 <%= chair.first %>:
- id: <%= index %>
  name: <%= chair.first.capitalize %>
  product_type: chair
  product_style: <%= chair.last %>
  services: repair
- photo_file_name: <%= index %>.jpg
 <% end %>
 
 <% tables.each do |table| %>
