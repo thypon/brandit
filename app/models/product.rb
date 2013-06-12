@@ -3,7 +3,8 @@ class Product < ActiveRecord::Base
   ## Attributes ##
   ################
   attr_accessible :description, :name, :photo
-  has_attached_file :photo
+  has_attached_file :photo,
+                    :url => '/assets/products/:id.:extension'
 
   ###############
   ## Relations ##
