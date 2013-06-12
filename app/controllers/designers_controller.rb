@@ -22,6 +22,7 @@ class DesignersController < ApplicationController
       content_for :pattern, :igt
   	elsif params[:product_id]
       content_for :pattern, :i
+      content_for :embedded, true
   	else
       content_for :pattern, :igt
     end

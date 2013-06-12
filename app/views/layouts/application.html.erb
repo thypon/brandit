@@ -6,6 +6,9 @@
   <title><%= content_for?(:title) ? "Brandit - #{yield :title}" : 'Brandit' %></title>
   <%= stylesheet_link_tag    'application', :media => 'all' %>
   <%= javascript_include_tag 'application' %>
+  <% if content_for? :embedded %>
+    <%= javascript_include_tag 'pager-embedded-ext' %>
+  <% end %>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>

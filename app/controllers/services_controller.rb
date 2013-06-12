@@ -20,10 +20,13 @@ class ServicesController < ApplicationController
   def show
   	if params[:designer_id]
       content_for :pattern, :igt
+      content_for :embedded, true
   	elsif params[:product_id]
       content_for :pattern, :i
-    elsif id = params[:service_point_id]
+      content_for :embedded, true
+    elsif params[:service_point_id]
       content_for :pattern, :none
+      content_for :embedded, true
   	else
       content_for :pattern, :igt
     end
