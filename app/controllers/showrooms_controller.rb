@@ -37,4 +37,18 @@ class ShowroomsController < ApplicationController
       redirect_to showrooms_path
     end
   end
+
+  def edit
+    @showroom = Showroom.find(params[:id])
+  end
+
+  def update
+    @showroom = Showroom.find(params[:id])
+
+    if @showroom.update_attributes(params[:showroom])
+      redirect_to @showroom
+    else
+      throw Exception
+    end
+  end
 end

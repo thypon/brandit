@@ -198,7 +198,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to @product
     else
-      redirect_to "404.html"
+      throw Exception
     end
   end
 

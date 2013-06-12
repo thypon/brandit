@@ -90,4 +90,18 @@ class DesignersController < ApplicationController
   		redirect_to designers_path
   	end 
   end
+
+  def edit
+    @designer = Designer.find(params[:id])
+  end
+
+  def update
+    @designer = Designer.find(params[:id])
+
+    if @designer.update_attributes(params[:designer])
+      redirect_to @designer
+    else
+      throw Exception
+    end
+  end
 end
