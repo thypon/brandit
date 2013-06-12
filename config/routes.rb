@@ -126,7 +126,6 @@ Brandit::Application.routes.draw do
         get 'up'
         get 'next'
         get 'previous'
-        get 'gallery'
       end
       collection do
         get 'up'
@@ -181,7 +180,6 @@ Brandit::Application.routes.draw do
     resources :showrooms do
       member do
         get 'up'
-        get 'gallery'
       end
     end
 
@@ -189,7 +187,6 @@ Brandit::Application.routes.draw do
       get 'up'
       get 'next'
       get 'previous'
-      get 'gallery'
     end
     collection do
       get 'up'
