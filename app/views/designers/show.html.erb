@@ -1,5 +1,5 @@
 <h1><%= @designer.name %></h1>
-<p><%= @designer.bio %></p>
+<p><%= raw @designer.bio %></p>
 <%= image_tag @designer.photo %>
 
 <%= link_to "Products", designer_products_path(@designer) %>
