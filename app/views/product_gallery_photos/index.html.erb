@@ -1,83 +1,19 @@
 <h1><%= @product.name %> - Photogallery</h1>
 
-<%= javascript_include_tag 'coverflow' %>
+<%= javascript_include_tag 'contentflow' %>
 
-<div id="container"></div>
+<div class="ContentFlow">
+    <div class="loadIndicator"><div class="indicator"></div></div>
+    <div class="flow">
 
-<% @product_gallery_photos.each do |photo| %>
-    <p class="photo-path" style="display:none"><%= photo.url %></p>
-<% end %>
-
-<script>
-		function reset() {
-
-			var replacement = document.createElement('div');
-			replacement.id = "container";
-
-			var el = document.getElementById('container');
-			el.parentNode.replaceChild(replacement, el);
-
-			//my code begin
-
-			var list = new Array();
-			var photos = $(".photo-path");
-			for(var i = 0; i < photos.length ; i++){
-				var element =
-				{
-					"title": "",
-					"description": "",
-					"image": photos[i].innerHTML,
-					"link": "",
-					"duration": ""
-				};
-				console.log(photos[i].innerHTML);
-				list.push(element);
-			}
-
-			console.log(list);
-			//my code end
-			
-			//$('#container').coverflow({
-			coverflow('#coverflow').setup({
-				width: '100%',
-				item: 1,
-				//mode: "flash",
-				//backgroundcolor: '009900',
-				//backgroundopacity: 0,
-				//wmode: 'transparent',
-				//gradientcolor: 'ff0000',
-				//showduration: true,
-				//playlist: "playlist.json",
-				//playlist: "http://api.flickr.com/services/feeds/groups_pool.gne?id=807213@N20&format=json&jsoncallback=?",
-				//route: {
-				// 	playlist: "items",
-				// 	image: "media.m"
-				//},
-				playlist: list,
-				coverwidth: 180,
-				coverheight: 150,
-				fixedsize: true,
-				textoffset: 50
-			})
-			.on('ready', function() {
-
-				this.on('focus', function(index) {
-					document.getElementById('focusindex').innerHTML = index;
-				});
-				
-				this.on('click', function(index, link) {
-					document.getElementById('clickindex').innerHTML = index;
-					console.log(link);
-				});
-			});
-		}
-
-		reset();
-
-		window.onresize = function() {
-			coverflow('container').resize();
-		}
-</script>
+        <% @product_gallery_photos.each do |photo| %>
+    		<%= image_tag photo.url, :class => "item" %>
+		<% end %>
+        
+    </div>
+    <div class="globalCaption"></div>
+    <div class="scrollbar"><div class="slider"><div class="position"></div></div></div>
+</div>
 
 <% content_for :structural_links do %>
     <li class="nav-header"><%= @product.name %></li>
