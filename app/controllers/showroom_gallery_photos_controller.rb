@@ -6,7 +6,7 @@ class ShowroomGalleryPhotosController < ApplicationController
 
     content_for :title, "#{@showroom.name} - Gallery"
 
-    @showroom_gallery_photos = ShowroomGalleryPhoto.all
+    @showroom_gallery_photos = @showroom.showroom_gallery_photos
   end
 
   # GET /showrooms/:showroom_id/showroom_gallery_photos/1

@@ -6,7 +6,7 @@ class ProductGalleryPhotosController < ApplicationController
 
     content_for :title, "#{@product.name} - Gallery"
 
-    @product_gallery_photos = ProductGalleryPhoto.all
+    @product_gallery_photos = @product.product_gallery_photos
   end
 
   # GET /products/:product_id/product_gallery_photos/1

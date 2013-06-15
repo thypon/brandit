@@ -1,3 +1,50 @@
 @import "bootstrap";
-body { padding-top: 60px; }
 @import "bootstrap-responsive";
+
+body {
+	padding-top: 60px;
+	color: #000000;
+}
+
+a {
+  color: #777777;
+}
+
+a:hover {
+	color: #000000 !important;
+}
+
+.active a {
+  background-color: #1B1B1B !important;
+  color: #FFFFFF !important;
+}
+
+.breadcrumb a {
+  color: #000000;
+}
+
+.nav-header {
+  color: #000000;
+}
+
+header {
+	box-shadow: -0.5em 0.5em 1em #E0DADA !important;
+}
+
+header a {
+	color: #B8B3B3 !important;
+}
+
+header a:hover {
+	color: #FFFFFF !important;
+}
+
+.brand {
+  font-size: 30px !important;
+  //font-weight: 800 !important;
+  letter-spacing: 7px;
+}
+
+.content {
+	box-shadow: -0.5em 0.5em 1em #E0DADA !important;
+}

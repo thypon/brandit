@@ -1,3 +1,4 @@
+
 /* ========== ContentFlow ========== */
 /*
  * Within this file you can adjust the styling of ContentFlow
@@ -124,3 +125,6 @@
     left: -50%;
 }
 
+.ContentFlow .content{
+    border: none;
+}
