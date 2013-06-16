@@ -1,6 +1,6 @@
 <h1><%= @service.name %></h1>
 
-<p><%= @service.description %></p>
+<p><%= raw @service.description %></p>
 
 <%= link_to "Products", service_products_path(@service) %><br>
 <%= link_to "Designers", service_designers_path(@service) %><br>

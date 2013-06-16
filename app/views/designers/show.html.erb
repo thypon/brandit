@@ -1,6 +1,5 @@
 <h1><%= @designer.name %></h1>
 <p><%= raw @designer.bio %></p>
-<%= image_tag @designer.photo %>
 
 <%= link_to "Products", designer_products_path(@designer) %>
 
@@ -11,3 +10,7 @@
 </p>
 
 <%= link_to @designer.name + " on internet", @designer.link %>
+
+<% content_for :inner_extra do %>
+    <%= image_tag @designer.photo %>
+<% end %>

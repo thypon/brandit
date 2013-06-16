@@ -1,6 +1,9 @@
-<h1><%= @showroom.name %></h1>
+<div style="width: 33%; float: left">
+    <%= image_tag @showroom.photo %>
+</div>
 
-<%= image_tag @showroom.photo %>
+<h3><%= @showroom.name %></h3>
+
 <p><%= @showroom.description %></p>
 <p><%= @showroom.contacts %></p>
 <%= link_to "Products", showroom_products_path(@showroom) %>
