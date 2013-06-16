@@ -24,7 +24,7 @@
         <li <%= 'class=active' if content_for? :company_active %>>
           <%= link_to 'Company',  url_for(controller: 'company', action: 'show') %>
         </li>
-        <li <%= 'class=active' if content_for? :where_we_are_active %>>
+        <li class="hidden-phone <%= 'active' if content_for? :where_we_are_active %>">
           <%= link_to 'Where we are?', url_for(controller: 'where_we_are', action: 'show') %>
         </li>
         <li <%= 'class=active' if content_for? :contacts_active %>>
