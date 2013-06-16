@@ -1,6 +1,10 @@
+<div style="float: left; width: 33%">
+    <%= image_tag @product.photo.url %>
+</div>
+
+
 <h1><%= @product.name %></h1>
 <p><%= raw @product.description %></p>
-<%= image_tag @product.photo.url %>
 
 <p>Designers:
 	<% @product.designers.each do |designer| %>
