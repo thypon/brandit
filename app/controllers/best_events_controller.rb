@@ -1,6 +1,6 @@
 class BestEventsController < ApplicationController
   def index
-    content_for :title, 'Best Events'
+    content_for :title, 'Best Event'
     content_for :best_event_active, true
     @events = Event.best
   end
