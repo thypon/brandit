@@ -1,17 +1,19 @@
 <% bio = "Was born in the northern Italian town of Piacenza, where he was raised with older brother and younger sister by his mother Maria and father Ugo. Armani aspired to a career in medicine after reading A. J. Cronin's The Citadel, and enrolled in the Department of Medicine at the University of Milan. In 1953, after three years he broke off his studies, and joined the army, because of his medical studies, he was promoted and transferred to an infirmary in Verona. After experiencing hospital life and occasional evenings at the Arena in Verona, he decided to find a different career."
-	
-	i = -1
+
+    require 'zlib'
+
+    def id sym
+      Zlib::crc32 sym.to_s
+    end
 
     files = Dir["#{Rails.root}/samples/designers/*.jpg"].cycle
 %>
 
-<%  id = i += 1 %>
-<%  currdir = "#{Rails.root}/public/images/designers/#{id}/original/" %>
+<%  currdir = "#{Rails.root}/public/images/designers/#{id :armani}/original/" %>
 <%  currfile = files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 armani:
- id: <%= id %>
  name: Giorgio Armani
  products: alea, coloured, wooden
  services: design
@@ -21,13 +23,11 @@ armani:
  photo_updated_at: <%= Time.now %>
  photo_content_type: image/jpeg
 
-<%  id = i += 1 %>
-<%  currdir = "#{Rails.root}/public/images/designers/#{id}/original/" %>
+<%  currdir = "#{Rails.root}/public/images/designers/#{id :pininfarina}/original/" %>
 <%  currfile = files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 pininfarina:
- id: <%= id %>
  name: Pininfarina
  products: alea, behemoth, sol, dada
  services: design
@@ -37,13 +37,11 @@ pininfarina:
  photo_updated_at: <%= Time.now %>
  photo_content_type: image/jpeg
 
-<%  id = i += 1 %>
-<%  currdir = "#{Rails.root}/public/images/designers/#{id}/original/" %>
+<%  currdir = "#{Rails.root}/public/images/designers/#{id :giugiaro}/original/" %>
 <%  currfile = files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 giugiaro:
- id: <%= id %>
  name: Giugiaro
  products: sol
  services: design
@@ -53,13 +51,11 @@ giugiaro:
  photo_updated_at: <%= Time.now %>
  photo_content_type: image/jpeg
 
-<%  id = i += 1 %>
-<%  currdir = "#{Rails.root}/public/images/designers/#{id}/original/" %>
+<%  currdir = "#{Rails.root}/public/images/designers/#{id :dixon}/original/" %>
 <%  currfile = files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 dixon:
- id: <%= id %>
  name: Tom Dixon
  products: lido, levante
  services: design
@@ -69,13 +65,11 @@ dixon:
  photo_updated_at: <%= Time.now %>
  photo_content_type: image/jpeg
 
-<%  id = i += 1 %>
-<%  currdir = "#{Rails.root}/public/images/designers/#{id}/original/" %>
+<%  currdir = "#{Rails.root}/public/images/designers/#{id :evans}/original/" %>
 <%  currfile = files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 evans:
- id: <%= id %>
  name: Paul Evans
  products: gliss, glide, stack, tree
  services: design
@@ -85,13 +79,11 @@ evans:
  photo_updated_at: <%= Time.now %>
  photo_content_type: image/jpeg
 
-<%  id = i += 1 %>
-<%  currdir = "#{Rails.root}/public/images/designers/#{id}/original/" %>
+<%  currdir = "#{Rails.root}/public/images/designers/#{id :hoffman}/original/" %>
 <%  currfile = files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 hoffman:
- id: <%= id %>
  name: Josef Hoffman
  products: stack, crystal, beautiful, elegant, minimal
  services: design

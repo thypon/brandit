@@ -1,8 +1,0 @@
-<% (1..6).each do |i| %>
-<% (1..6).each do |j| %>
-rel_<%= i %>_<%= j %>:
-  product_id: <%= i %>
-  designer_id: <%= j %>
-
-<% end %>
-<% end %>
