@@ -1,9 +1,9 @@
 <% bio = "Was born in the northern Italian town of Piacenza, where he was raised with older brother and younger sister by his mother Maria and father Ugo. Armani aspired to a career in medicine after reading A. J. Cronin's The Citadel, and enrolled in the Department of Medicine at the University of Milan. In 1953, after three years he broke off his studies, and joined the army, because of his medical studies, he was promoted and transferred to an infirmary in Verona. After experiencing hospital life and occasional evenings at the Arena in Verona, he decided to find a different career."
 
-    require 'zlib'
+    require 'active_record/fixtures'
 
     def id sym
-      Zlib::crc32 sym.to_s
+      ActiveRecord::Fixtures.identify sym
     end
 
     files = Dir["#{Rails.root}/samples/designers/*.jpg"].cycle
