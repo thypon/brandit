@@ -9,13 +9,28 @@
     description = "This showroom tries to bring you the most contemporary style every day.<br><br><strong>Opening Times</strong><br>Monday to Friday 9am  5pm<br>Saturday 12noon  5pm<br>Sunday CLOSED<br><br>"
    	contacts = "02 123456"
 
+   	   require 'active_record/fixtures'
+
+       def id sym
+        ActiveRecord::Fixtures.identify sym
+       end
+
+       files = Dir["#{Rails.root}/samples/gallery/*.jpg"].shuffle.cycle
 %>
 
 <% addresses.each do |address| %>
+<%  currdir = "#{Rails.root}/public/images/showrooms/#{id address.first.first}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
 <%= address.first.first %>:
  name: <%= address.last %>
  address: <%= address.first.last %>
  products: ecleptic, innovative, minimal, beautiful, wooden, glide, skin, glove
  contacts: <%= contacts %>
  description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 <% end %>
