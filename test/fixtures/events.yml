@@ -1,19 +1,33 @@
+<% descriptions = {
+    :salone => "<p>The <strong>52nd edition</strong> of the Salone closed on an extremely positive high, with the over 2,500 Italian and foreign exhibitors at the <strong>Salone Internazionale del Mobile</strong>, the International Furnishing Accessories Exhibition, SaloneSatellite and the biennial Euroluce and International Lighting Exhibition and SaloneUfficio in the global spotlight from 9th to 14th April.</p>",
+    :macef => "<p><strong>MACEF</strong>, the  International  Home  Show,  is  a  success  that  is  renewed  every  year  and  where  only excellence  has  pride  of  place.  And  excellence  of  course goes hand  in  hand  with  creativity, innovation,  aesthetic  research  and  business.  Because  MACEF  is  first  and  foremost  the  most important meeting opportunity for exhibitors, meaning the great home design brands, and for buyers who are ready make their orders for the new season. Macef does indeed offer all the great international brands but also the best of small series production lines.</p>",
+    :cersaie =>"<p><strong>Building, Dwelling, Thinking</strong> came about from sniffing the air, which in 2009 reeked of the odour of recession. A powerful gust of wind blew our hats off and forced us to look up. Where has this wind come from? What’s going on? What’s going to happen? It made us realise that it was time to reflect on the present, to study the past in order to imagine the future.</p><p>The debate extends beyond the realms of commerce and goes right to the heart of the building world, addressing the topical themes that are being debated amongst architects and ultimately extending to the sphere of human beings. Because, in the words of Heidegger, &quotdwelling is the stay of mortals on the earth&quot.</p> <p>The title <strong>Building, dwelling, thinking</strong> is in fact taken from a well-known essay by the German philosopher. We wanted to start out from the words of a philosopher because if the changes are as significant as expected, it is necessary to start out from the essence of things and therefore from the meaning of building and dwelling.</p><p>This series of conferences and seminars will host speakers from a range of backgrounds, including architecture, in an attempt to discuss the chosen themes from various standpoints.</p>",
+    :marmomacc => "<p>International fair for operators in the marble sector, from machinery to instrumental products, from blocks to more complex stone processing, for professionals in construction and contract sectors as well as designers and decision makers seeking success in an increasingly specialised and competitive context.</p>",
+    :oltremare => "<p><strong>Mostra d'Oltremare</strong> was opened as the Triennial Exhibition of Italian Overseas Lands, on 9th May, 1940. It had been planned by the government as a Universal Theme Exhibition, like the Universal Exhibition of Rome Park (later known as EUR). At the time the facilities were 36 exhibition pavilions set in green areas, rich in herbs imported from the colonies Italy had at the time; each pavilion recreated one of the overseas colonies, in every aspect (habitat, flora, architecture).</p>"
+}
+%>
+
 salone:
  name: Salone del mobile
+ description: <%= descriptions[:salone] %>
  major: true
 
-fiera:
- name: Arreda casa a Rho
+macef:
+ name: MACEF
+ description: <%= descriptions[:macef] %>
  major: true
 
-artigiano:
- name: L'artigianato in fiera
+cersaie:
+ name: Cersaie
+ description: <%= descriptions[:cersaie] %>
  major: true
 
-est:
- name: La fiera dell'est
+marmomacc:
+ name: Marmomacc
+ description: <%= descriptions[:marmomacc] %>
  major: false
 
-bamboo:
- name: Bamboo furniture 2010
+oltremare:
+ name: Fiera dell'Oltremare
+ description: <%= descriptions[:oltremare] %>
  major: false
