@@ -1,0 +1,64 @@
+<% chairs = {  :ecleptic => :oriental,
+                :innovative => :oriental,
+                :fabulous => :vintage,
+                :classic => :vintage,
+                :dinamic => :bamboo,
+                :young => :sweetrussian,
+                :innovative => :italian}
+    tables = {  :comfortable => :italian,
+                :compact => :minimal,
+                :minimal => :minimal,
+                :elegant => :sweetrussian,
+                :beautiful => :italian,
+                :squared => :minimal,
+                :essential => :minimal,
+                :crystal => :minimal}
+    kitchens = {:wooden => :oriental,
+                :country => :classic,
+                :alea => :bamboo,
+                :maxima => :sweetrussian}
+    wardrobes = {:gliss => :minimal,
+                :glide => :minimal,
+                :stack => :classic,
+                :tree => :bamboo,
+                :coloured => :oriental}
+    sofas = {   :freestyle => :sweetrussian,
+                :large => :minimal,
+                :lido => :vintage,
+                :skin => :minimal,
+                :still => :italian,
+                :dada => :vintage,
+                :sol => :italian,
+                :behemoth => :oriental}
+    beds = {    :clip => :minimal,
+                :glove => :italian,
+                :levante => :italian,
+                :oz => :vintage,
+                :wish => :vintage}
+
+    names = chairs.keys + tables.keys + kitchens.keys + wardrobes.keys + sofas.keys + beds.keys
+
+    require 'active_record/fixtures'
+
+    def id sym
+      ActiveRecord::Fixtures.identify sym
+    end
+
+    files = Dir["#{Rails.root}/samples/gallery/*.jpg"].shuffle.cycle
+%>
+
+<% names.each do |name| %>
+<% 10.times do |i| %>
+<%  nm = "#{name}_photo_#{i}" %>
+<%  currdir = "#{Rails.root}/public/images/product_gallery_photos/#{id nm}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
+<%= nm %>:
+ product: <%= name %>
+ this_file_name: <%= File.basename currfile %>
+ this_file_size: <%= File.size currfile %>
+ this_updated_at: <%= Time.now %>
+ this_content_type: image/jpeg
+<% end %>
+<% end %>
