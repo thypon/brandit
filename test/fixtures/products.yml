@@ -37,58 +37,122 @@
                 :wish => :vintage}
 
     description = "The frame was initially designed to be bolted together, but was redesigned in 1950 using stainless steel, which allowed the frame to be formed by a seamless piece of metal, giving it a smoother appearance. Bovine leather replaced the ivory-colored pigskin which was used for the original pieces.<br/>The functional design and elements of it that were patented by Mies in Germany, Spain and the United States in the 1930s have since expired. The product was manufactured in the US and Europe in limited production from the 1930s to the 1950s. In 1953, six years after Reich's death, van der Rohe ceded his rights and his name on the design to Knoll, knowing that his design patents were expired. This collaboration then renewed popularity in the design."
+
+    i = -1
+
+    files = Dir["#{Rails.root}/samples/products/*.jpg"].cycle
 %>
 
 <% chairs.each do |chair| %>
+<%  id = i += 1 %>
+<%  currdir = "#{Rails.root}/public/images/products/#{id}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
 <%= chair.first %>:
+ id: <%= id %>
  name: <%= chair.first.capitalize %>
  product_type: chair
  product_style: <%= chair.last %>
  services: repair
  description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 <% end %>
 
 <% tables.each do |table| %>
+<%  id = i += 1 %>
+<%  currdir = "#{Rails.root}/public/images/products/#{id}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
 <%= table.first %>:
+ id: <%= id %>
  name: <%= table.first.capitalize %>
  product_type: table
  product_style: <%= table.last %>
  services: repair, personalization
  description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 <% end %>
 
 <% sofas.each do |sofa| %>
+<%  id = i += 1 %>
+<%  currdir = "#{Rails.root}/public/images/products/#{id}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
 <%= sofa.first %>:
+ id: <%= id %>
  name: <%= sofa.first.capitalize %>
  product_type: sofa
  product_style: <%= sofa.last %>
  services: repair, design, personalization
  description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 <% end %>
 
 <% kitchens.each do |kitchen| %>
+<%  id = i += 1 %>
+<%  currdir = "#{Rails.root}/public/images/products/#{id}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
 <%= kitchen.first %>:
+ id: <%= id %>
  name: <%= kitchen.first.capitalize %>
  product_type: kitchen
  product_style: <%= kitchen.last %>
  services: repair, design, assistance, personalization
  description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 <% end %>
 
 <% wardrobes.each do |wardrobe| %>
+<%  id = i += 1 %>
+<%  currdir = "#{Rails.root}/public/images/products/#{id}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
 <%= wardrobe.first %>:
+ id: <%= id %>
  name: <%= wardrobe.first.capitalize %>
  product_type: wardrobe
  product_style: <%= wardrobe.last %>
  services: repair, assistance
  description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 <% end %>
 
 <% beds.each do |bed| %>
+<%  id = i += 1 %>
+<%  currdir = "#{Rails.root}/public/images/products/#{id}/original/" %>
+<%  currfile = files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
 <%= bed.first %>:
+ id: <%= id %>
  name: <%= bed.first.capitalize %>
  product_type: bed
  product_style: <%= bed.last %>
  services: design, personalization
  description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 <% end %>
