@@ -1,11 +1,15 @@
 repair:
  name: In-place repairment
+ description: "We repair everything that is broken, 100% guranteed! Just come to us and bring your product!"
 
 design:
  name: Interior Design
+ description: "Every room needs someone to design it, we offer you our best designers to help in find the best solution for your furniture."
 
 personalization:
  name: Personalization
+ description: "If you need, we can customize your furniture."
 
 assistance:
  name: Assistance
+ description: "We are available for everything you need to know about our products." 

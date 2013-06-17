@@ -1,29 +1,37 @@
+<% bio = "Was born in the northern Italian town of Piacenza, where he was raised with older brother and younger sister by his mother Maria and father Ugo. Armani aspired to a career in medicine after reading A. J. Cronin's The Citadel, and enrolled in the Department of Medicine at the University of Milan. In 1953, after three years he broke off his studies, and joined the army, because of his medical studies, he was promoted and transferred to an infirmary in Verona. After experiencing hospital life and occasional evenings at the Arena in Verona, he decided to find a different career." %>
+
 armani:
  name: Giorgio Armani
  products: alea, coloured, wooden
  services: design
+ bio: <%= bio %>
 
 pininfarina:
  name: Pininfarina
  products: alea, behemoth, sol, dada
  services: design
+ bio: <%= bio %>
 
 giugiaro:
  name: Giugiaro
  products: sol
  services: design
+ bio: <%= bio %>
 
 dixon:
  name: Tom Dixon
  products: lido, levante
  services: design
+ bio: <%= bio %>
 
 evans:
  name: Paul Evans
  products: gliss, glide, stack, tree
  services: design
+ bio: <%= bio %>
 
 hoffman:
  name: Josef Hoffman
  products: stack, crystal, beautiful, elegant, minimal
  services: design
+ bio: <%= bio %>

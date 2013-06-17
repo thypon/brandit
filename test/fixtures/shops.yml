@@ -4,13 +4,19 @@
                 [4, "Warwick Avenue, 16"] => [:tree, :stack],
                 [5, "Grimmauld Place, 12"] => [:country, :alea, :maxima],
                 [6, "Golgi Road, 42"] => [:innovative, :young, :wooden, :skin, :stack, :glide],
-                [7, "Leonardo da Vinci Place, 1"] => [:large, :lido, :sol, :glove, :clip]}%>
+                [7, "Leonardo da Vinci Place, 1"] => [:large, :lido, :sol, :glove, :clip]}
+
+   description = "This shop is near the station, you can go straight forward till you reach the Hall and then turn to the right.<br><br><strong>Opening Times</strong><br>Monday to Friday 9am  5pm<br>Saturday 12noon  5pm<br>Sunday CLOSED<br><br><strong>FREE</strong> onsite parking is available in our car park."
+   contacts = "02 123456"
+%>
 
 <% addresses.each do |address| %>
 milan_<%= address.first.first %>:
  address: <%= address.first.last %>
  city: milan
  products: ecleptic, innovative, minimal, beautiful, wooden
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -18,6 +24,8 @@ paris_<%= address.first.first %>:
  address: <%= address.first.last %>
  city: paris
  products: glide, coloured, skin
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -25,6 +33,8 @@ london_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: london
  products: coloured, wooden, behemoth, levante
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -32,6 +42,8 @@ peschici_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: peschici
  products: tree, stack
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -46,6 +58,8 @@ madrid_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: madrid
  products: innovative, young, wooden, skin, stack, glide
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -53,6 +67,8 @@ geneva_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: geneva
  products: large, lido, sol, glove, clip
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -60,4 +76,6 @@ rome_<%= address.first.first %>:
  address: <%= address.first.last %>
  city: rome
  products: coloured, wooden, behemoth, levante
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>

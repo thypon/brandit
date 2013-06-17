@@ -1,7 +1,7 @@
 <h1><%= @shop.city.name + " - " + @shop.address %></h1>
 
 <p><%= raw @shop.description %></p>
-<p><%= raw @shop.contacts %></p>
+<p>Contact us: <%= raw @shop.contacts %></p>
 <%= link_to "Products", shop_products_path(@shop) %>
 
 <% content_for :extra do %>

@@ -1,7 +1,7 @@
 <h1><%= @service_point.city.name + " - " + @service_point.service.name %></h1>
 
 <p><strong><%= raw @service_point.address %></strong></p>
-<p><%= raw @service_point.contacts %></p>
+<p>Contacts: <%= raw @service_point.contacts %></p>
 
 <!-- TODO sistemare il link -->
 <%= link_to @service_point.service.name, [@service_point, @service_point.service] %>

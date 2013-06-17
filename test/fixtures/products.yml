@@ -35,6 +35,8 @@
                 :levante => :italian,
                 :oz => :vintage,
                 :wish => :vintage}
+
+    description = "The frame was initially designed to be bolted together, but was redesigned in 1950 using stainless steel, which allowed the frame to be formed by a seamless piece of metal, giving it a smoother appearance. Bovine leather replaced the ivory-colored pigskin which was used for the original pieces.<br/>The functional design and elements of it that were patented by Mies in Germany, Spain and the United States in the 1930s have since expired. The product was manufactured in the US and Europe in limited production from the 1930s to the 1950s. In 1953, six years after Reich's death, van der Rohe ceded his rights and his name on the design to Knoll, knowing that his design patents were expired. This collaboration then renewed popularity in the design."
 %>
 
 <% chairs.each do |chair| %>
@@ -43,6 +45,7 @@
  product_type: chair
  product_style: <%= chair.last %>
  services: repair
+ description: <%= description %>
 <% end %>
 
 <% tables.each do |table| %>
@@ -51,6 +54,7 @@
  product_type: table
  product_style: <%= table.last %>
  services: repair, personalization
+ description: <%= description %>
 <% end %>
 
 <% sofas.each do |sofa| %>
@@ -59,6 +63,7 @@
  product_type: sofa
  product_style: <%= sofa.last %>
  services: repair, design, personalization
+ description: <%= description %>
 <% end %>
 
 <% kitchens.each do |kitchen| %>
@@ -67,6 +72,7 @@
  product_type: kitchen
  product_style: <%= kitchen.last %>
  services: repair, design, assistance, personalization
+ description: <%= description %>
 <% end %>
 
 <% wardrobes.each do |wardrobe| %>
@@ -75,6 +81,7 @@
  product_type: wardrobe
  product_style: <%= wardrobe.last %>
  services: repair, assistance
+ description: <%= description %>
 <% end %>
 
 <% beds.each do |bed| %>
@@ -83,4 +90,5 @@
  product_type: bed
  product_style: <%= bed.last %>
  services: design, personalization
+ description: <%= description %>
 <% end %>

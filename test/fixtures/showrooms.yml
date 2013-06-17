@@ -4,11 +4,18 @@
                 [:winehouse, "Warwick Avenue, 16"] => "The wine-house",
                 [:hp, "Grimmauld Place, 12"] => "Expecto Patronum",
                 [:dei, "Golgi Road, 42"] => "Dei dell'arredo",
-                [:more, "Leonardo da Vinci Place, 1"] => "Furnitures & more"}%>
+                [:more, "Leonardo da Vinci Place, 1"] => "Furnitures & more"}
+
+    description = "This showroom tries to bring you the most contemporary style every day.<br><br><strong>Opening Times</strong><br>Monday to Friday 9am  5pm<br>Saturday 12noon  5pm<br>Sunday CLOSED<br><br>"
+   	contacts = "02 123456"
+
+%>
 
 <% addresses.each do |address| %>
 <%= address.first.first %>:
  name: <%= address.last %>
  address: <%= address.first.last %>
  products: ecleptic, innovative, minimal, beautiful, wooden, glide, skin, glove
+ contacts: <%= contacts %>
+ description: <%= description %>
 <% end %>

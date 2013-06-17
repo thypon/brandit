@@ -4,13 +4,17 @@
 				[4, "Warwick Avenue, 16"] => :assistance,
 				[5, "Grimmauld Place, 12"] => :design,
 				[6, "Golgi Road, 42"] => :repair,
-				[7, "Leonardo da Vinci Place, 1"] => :assistance}%>
+				[7, "Leonardo da Vinci Place, 1"] => :assistance}
+
+	contacts = "02 123456"
+%>
 
 <% addresses.each do |address| %>
 milan_<%= address.first.first %>:
  address: <%= address.first.last %>
  city: milan
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -18,6 +22,7 @@ paris_<%= address.first.first %>:
  address: <%= address.first.last %>
  city: paris
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -25,6 +30,7 @@ london_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: london
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -32,6 +38,7 @@ peschici_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: peschici
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -39,6 +46,7 @@ madrid_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: madrid
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -46,6 +54,7 @@ madrid_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: madrid
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -53,6 +62,7 @@ geneva_<%= address.first.first %>:
  address: <%= address.first.last%>
  city: geneva
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
 
 <% addresses.each do |address| %>
@@ -60,4 +70,5 @@ rome_<%= address.first.first %>:
  address: <%= address.first.last %>
  city: rome
  service: <%= address.last %>
+ contacts: <%= contacts %>
 <% end %>
