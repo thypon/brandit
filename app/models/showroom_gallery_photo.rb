@@ -3,7 +3,9 @@ class ShowroomGalleryPhoto < ActiveRecord::Base
   ## Attributes ##
   ################
   attr_accessible :this
-  has_attached_file :this
+  has_attached_file :this,
+                    :path => ':rails_root/public/images/:class/:id/:style/:basename.:extension',
+                    :url => '/images/:class/:id/:style/:basename.:extension'
 
   ###############
   ## Relations ##
