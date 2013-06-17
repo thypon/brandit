@@ -1,15 +1,17 @@
 <h1><%= @designer.name %></h1>
-<p><%= raw @designer.bio %></p>
+<div class="span5" style="margin: 0em">
+	<p><%= raw @designer.bio %></p>
 
-<%= link_to "Products", designer_products_path(@designer) %>
+	<%= link_to "Products", designer_products_path(@designer) %>
 
-<p>Services:
-	<% @designer.services.each do |service| %>
-	<%= link_to service.name, [@designer, service] %>
-	<% end %>
-</p>
+	<p>Services:
+		<% @designer.services.each do |service| %>
+		<%= link_to service.name, [@designer, service] %>
+		<% end %>
+	</p>
 
-<%= link_to @designer.name + " on internet", @designer.link %>
+	<%= link_to @designer.name + " on internet", @designer.link %>
+</div>
 
 <% content_for :inner_extra do %>
     <%= image_tag @designer.photo %>

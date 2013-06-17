@@ -124,12 +124,12 @@
                       <li><a class="up" href="#">Up</a></li>
                     </ul>
                 <% end %>
+                <%= yield %>
                 <% if content_for? :inner_extra %>
                     <div class="inner-extra">
                       <%= yield :inner_extra %>
                     </div>
                 <% end %>
-                <%= yield %>
               </div>
           <% end %>
         </div>
