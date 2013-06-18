@@ -13,10 +13,6 @@
                 :squared => :minimal,
                 :essential => :minimal,
                 :crystal => :minimal}
-    kitchens = {:wooden => :oriental,
-                :country => :classic,
-                :alea => :bamboo,
-                :maxima => :sweetrussian}
     wardrobes = {:gliss => :minimal,
                 :glide => :minimal,
                 :stack => :classic,
@@ -36,7 +32,7 @@
                 :oz => :vintage,
                 :wish => :vintage}
 
-    names = chairs.keys + tables.keys + kitchens.keys + wardrobes.keys + sofas.keys + beds.keys
+    names = chairs.keys + tables.keys + wardrobes.keys + sofas.keys + beds.keys
 
     require 'active_record/fixtures'
 
