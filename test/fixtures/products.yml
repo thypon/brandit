@@ -13,10 +13,7 @@
                 :squared => :minimal,
                 :essential => :minimal,
                 :crystal => :minimal}
-    kitchens = {:wooden => :oriental,
-                :country => :classic,
-                :alea => :bamboo,
-                :maxima => :sweetrussian}
+    
     wardrobes = {:gliss => :minimal,
                 :glide => :minimal,
                 :stack => :classic,
@@ -44,12 +41,16 @@
       ActiveRecord::Fixtures.identify sym
     end
 
-    files = Dir["#{Rails.root}/samples/products/*.jpg"].cycle
+    chair_files = Dir["#{Rails.root}/samples/products/1*.jpg"].cycle
+    table_files = Dir["#{Rails.root}/samples/products/2*.jpg"].cycle
+    wardrobe_files = Dir["#{Rails.root}/samples/products/4*.jpg"].cycle
+    sofa_files = Dir["#{Rails.root}/samples/products/3*.jpg"].cycle
+    bed_files = Dir["#{Rails.root}/samples/products/5*.jpg"].cycle
 %>
 
 <% chairs.each do |chair| %>
 <%  currdir = "#{Rails.root}/public/images/products/#{id chair.first}/original/" %>
-<%  currfile = files.next %>
+<%  currfile = chair_files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 <%= chair.first %>:
@@ -66,7 +67,7 @@
 
 <% tables.each do |table| %>
 <%  currdir = "#{Rails.root}/public/images/products/#{id table.first}/original/" %>
-<%  currfile = files.next %>
+<%  currfile = table_files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 <%= table.first %>:
@@ -83,7 +84,7 @@
 
 <% sofas.each do |sofa| %>
 <%  currdir = "#{Rails.root}/public/images/products/#{id sofa.first}/original/" %>
-<%  currfile = files.next %>
+<%  currfile = sofa_files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 <%= sofa.first %>:
@@ -98,26 +99,9 @@
  photo_content_type: image/jpeg
 <% end %>
 
-<% kitchens.each do |kitchen| %>
-<%  currdir = "#{Rails.root}/public/images/products/#{id kitchen.first}/original/" %>
-<%  currfile = files.next %>
-<%  FileUtils.makedirs currdir %>
-<%  FileUtils.cp currfile, currdir %>
-<%= kitchen.first %>:
- name: <%= kitchen.first.capitalize %>
- product_type: kitchen
- product_style: <%= kitchen.last %>
- services: repair, design, assistance, personalization
- description: <%= description %>
- photo_file_name: <%= File.basename currfile %>
- photo_file_size: <%= File.size currfile %>
- photo_updated_at: <%= Time.now %>
- photo_content_type: image/jpeg
-<% end %>
-
 <% wardrobes.each do |wardrobe| %>
 <%  currdir = "#{Rails.root}/public/images/products/#{id wardrobe.first}/original/" %>
-<%  currfile = files.next %>
+<%  currfile = wardrobe_files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 <%= wardrobe.first %>:
@@ -134,7 +118,7 @@
 
 <% beds.each do |bed| %>
 <%  currdir = "#{Rails.root}/public/images/products/#{id bed.first}/original/" %>
-<%  currfile = files.next %>
+<%  currfile = bed_files.next %>
 <%  FileUtils.makedirs currdir %>
 <%  FileUtils.cp currfile, currdir %>
 <%= bed.first %>:
