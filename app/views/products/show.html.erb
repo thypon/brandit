@@ -6,19 +6,28 @@
 <h1><%= @product.name %></h1>
 <p><%= raw @product.description %></p>
 
-<p>Designers:
-	<% @product.designers.each do |designer| %>
-	<%= link_to designer.name, [@product, designer] %>
-	<% end %>
-</p>
+<% if @product.designers.length != 0 %>
+    <ul class="links">
+      Designers:
+        <% @product.designers.each do |designer| %>
+        <li><%= link_to designer.name, [@product, designer] %></li>
+        <% end %>
+    </ul>
+<% end %>
 
-<p>Services:
+<% if @product.services.length != 0 %>
+  <ul class="links">
+    Services:
 	<% @product.services.each do |service| %>
-	<%= link_to service.name, [@product, service] %> |
+	<li><%= link_to service.name, [@product, service] %></li>
 	<% end %>
-</p>
+  </ul>
+<% end %>
 
-<%= link_to "Showrooms", product_showrooms_path(@product) %> | <%= link_to "Shops", product_shops_path(@product) %>
+<ul class="links">
+    <li><%= link_to "Showrooms", product_showrooms_path(@product) %></li>
+    <li><%= link_to "Shops", product_shops_path(@product) %></li>
+</ul>
 
 <% content_for :structural_links do %>
     <li class="nav-header"><%= @product.name %></li>

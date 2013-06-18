@@ -48,3 +48,21 @@ aside {
 	width: 31%;
 	margin-right: 2%;
 }
+
+ul.links {
+  list-style: none;
+  margin: 0px;
+}
+
+ul.links li:first-child {
+  padding-left: 0em;
+  margin-left: 0em;
+  border-left: none;
+}
+
+ul.links li {
+  display: inline;
+  padding-left:0.4em;
+  margin-left:0.2em;
+  border-left:1px solid #000000;
+}
