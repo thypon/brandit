@@ -26,7 +26,6 @@
 <%= address.first.first %>:
  name: <%= address.last %>
  address: <%= address.first.last %>
- products: ecleptic, innovative, minimal, beautiful, wooden, glide, skin, glove
  contacts: <%= contacts %>
  description: <%= description %>
  photo_file_name: <%= File.basename currfile %>
