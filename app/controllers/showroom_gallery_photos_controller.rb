@@ -8,23 +8,4 @@ class ShowroomGalleryPhotosController < ApplicationController
 
     @showroom_gallery_photos = @showroom.showroom_gallery_photos
   end
-
-  # GET /showrooms/:showroom_id/showroom_gallery_photos/1
-
-
-  # GET /showrooms/:showroom_id/showroom_gallery_photos/new
-
-
-  # GET /showrooms/:showroom_id/showroom_gallery_photos/1/edit
-
-
-  # POST /showroom_gallery_photos
-  # POST /showroom_gallery_photos.json
-
-
-  # PUT /showroom_gallery_photos/1
-  # PUT /showroom_gallery_photos/1.json
-
-  # DELETE /showroom_gallery_photos/1
-  # DELETE /showroom_gallery_photos/1.json
 end
