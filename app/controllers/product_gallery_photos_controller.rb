@@ -8,24 +8,4 @@ class ProductGalleryPhotosController < ApplicationController
 
     @product_gallery_photos = @product.product_gallery_photos
   end
-
-  # GET /products/:product_id/product_gallery_photos/1
-
-
-  # GET /products/:product_id/product_gallery_photos/new
-
-
-  # GET /products/:product_id/product_gallery_photos/1/edit
-
-
-  # POST /product_gallery_photos
-  # POST /product_gallery_photos.json
-
-
-  # PUT /product_gallery_photos/1
-  # PUT /product_gallery_photos/1.json
-
-
-  # DELETE /product_gallery_photos/1
-  # DELETE /product_gallery_photos/1.json
 end
