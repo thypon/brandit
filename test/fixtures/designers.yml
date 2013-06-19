@@ -15,7 +15,7 @@
 <%  FileUtils.cp currfile, currdir %>
 armani:
  name: Giorgio Armani
- products: alea, coloured, wooden
+ products: alea, coloured, wooden, skin
  services: design
  bio: <%= bio %>
  photo_file_name: <%= File.basename currfile %>
