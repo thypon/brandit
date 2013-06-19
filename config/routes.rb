@@ -253,5 +253,7 @@ Brandit::Application.routes.draw do
     end
   end
 
+  mount RailsAdmin::Engine => '/admin'
+
   root :to => 'homepage#show'
 end
