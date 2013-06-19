@@ -81,11 +81,7 @@ class DesignersController < ApplicationController
       end
     elsif id = params[:product_id]
       product = Product.find(id)
-      if params[:id]
-        redirect_to product_designers_path(product)
-      else
-        redirect_to product
-      end
+      redirect_to product
   	else
   		redirect_to designers_path
   	end 

@@ -22,7 +22,6 @@
     sofas = {   :freestyle => :sweetrussian,
                 :large => :minimal,
                 :lido => :vintage,
-                :skin => :minimal,
                 :still => :italian,
                 :dada => :vintage,
                 :sol => :italian,
@@ -98,6 +97,23 @@
  photo_updated_at: <%= Time.now %>
  photo_content_type: image/jpeg
 <% end %>
+
+<%  currdir = "#{Rails.root}/public/images/products/#{id :skin}/original/" %>
+<%  currfile = sofa_files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
+skin:
+ name: Skin
+ product_type: sofa
+ product_style: minimal
+ services: repair, design, personalization
+ description: <%= description %>
+ designers: armani
+ showrooms: beatles, badborn
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
 
 <% wardrobes.each do |wardrobe| %>
 <%  currdir = "#{Rails.root}/public/images/products/#{id wardrobe.first}/original/" %>
