@@ -8,3 +8,5 @@ wardrobe:
   name: Wardrobes
 sofa:
   name: Sofas
+lamp:
+  name: Lamps

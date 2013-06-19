@@ -33,6 +33,12 @@
                 :oz => :vintage,
                 :wish => :vintage}
 
+    lamps = {    :soyosoyo => :minimal,
+                    :jappa => :italian,
+                    :turandot => :italian,
+                    :wikiwiki => :vintage,
+                    :zambia => :vintage}
+
     description = "The frame was initially designed to be bolted together, but was redesigned in 1950 using stainless steel, which allowed the frame to be formed by a seamless piece of metal, giving it a smoother appearance. Bovine leather replaced the ivory-colored pigskin which was used for the original pieces.<br/>The functional design and elements of it that were patented by Mies in Germany, Spain and the United States in the 1930s have since expired. The product was manufactured in the US and Europe in limited production from the 1930s to the 1950s. In 1953, six years after Reich's death, van der Rohe ceded his rights and his name on the design to Knoll, knowing that his design patents were expired. This collaboration then renewed popularity in the design."
 
     require 'active_record/fixtures'
@@ -46,6 +52,7 @@
     wardrobe_files = Dir["#{Rails.root}/samples/products/4*.jpg"].cycle
     sofa_files = Dir["#{Rails.root}/samples/products/3*.jpg"].cycle
     bed_files = Dir["#{Rails.root}/samples/products/5*.jpg"].cycle
+    lamp_files = Dir["#{Rails.root}/samples/products/6*.jpg"].cycle
 %>
 
 <% chairs.each do |chair| %>
@@ -126,6 +133,24 @@
  product_type: bed
  product_style: <%= bed.last %>
  services: design, personalization
+ description: <%= description %>
+ photo_file_name: <%= File.basename currfile %>
+ photo_file_size: <%= File.size currfile %>
+ photo_updated_at: <%= Time.now %>
+ photo_content_type: image/jpeg
+<% end %>
+
+
+<% lamps.each do |lamp| %>
+<%  currdir = "#{Rails.root}/public/images/products/#{id lamp.first}/original/" %>
+<%  currfile = lamp_files.next %>
+<%  FileUtils.makedirs currdir %>
+<%  FileUtils.cp currfile, currdir %>
+<%= lamp.first %>:
+ name: <%= lamp.first.capitalize %>
+ product_type: lamp
+ product_style: <%= lamp.last %>
+ services: design, personalization, repair
  description: <%= description %>
  photo_file_name: <%= File.basename currfile %>
  photo_file_size: <%= File.size currfile %>
