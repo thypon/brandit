@@ -1,0 +1,26 @@
+<h1><%= @product.name %> - Photogallery</h1>
+
+<%= javascript_include_tag 'contentflow' %>
+
+<div class="ContentFlow">
+    <div class="loadIndicator"><div class="indicator"></div></div>
+    <div class="flow">
+
+        <% @product_gallery_photos.each do |photo| %>
+    		<%= image_tag photo.url, :class => "item" %>
+		<% end %>
+        
+    </div>
+    <div class="globalCaption"></div>
+    <div class="scrollbar"><div class="slider"><div class="position"></div></div></div>
+</div>
+
+<% content_for :structural_links do %>
+    <li class="nav-header"><%= @product.name %></li>
+    <li>
+      <%= link_to 'General Info', @product %>
+    </li>
+    <li class="active">
+      <%= link_to 'Photogallery', product_product_gallery_photos_path(@product) %>
+    </li>
+<% end %>
